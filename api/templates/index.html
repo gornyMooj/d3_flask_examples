@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3 EXAMPLES</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
+    <!-- THIS IS FOR CSS -->
+    {% block head %}{% endblock %}
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">D3 EXAMPLES</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  LINES
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="/line-basic-v1">line-basic-v1</a></li>
+                  <li><a class="dropdown-item" href="/line-basic-v2">line-basic-v2</a></li>
+                  <li><a class="dropdown-item" href="/line-basic-v3-line-dots">line-basic-v3-line-dots</a></li>
+                  <li><a class="dropdown-item" href="/line-basic-v4-line-dots-grid">line-basic-v4-line-dots-grid</a></li>
+                  <li><a class="dropdown-item" href="/line-basic-v5-line-dots-grid-toolpit">line-basic-v5-line-dots-grid-toolpit</a></li>                  
+                  <li><a class="dropdown-item" href="/line-basic-v6-line-dots-grid-zoom">line-basic-v6-line-dots-grid-zoom</a></li>     
+                  <li><a class="dropdown-item" href="/line-basic-v7-line-dots-grid-zoom-toolpit">line-basic-v7-line-dots-grid-zoom-toolpit</a></li>
+                  <li><a class="dropdown-item" href="/line-basic-v8-time">line-basic-v8-time</a></li>
+                  <li><a class="dropdown-item" href="/line-basic-v9-time">line-basic-v9-time</a></li>
+                  <li><a class="dropdown-item" href="/line-basic-v10-time">line-basic-v10-time</a></li>
+                  <li><a class="dropdown-item" href="/line-interactive-v1">line-interactive-v1</a></li>
+                  <li><a class="dropdown-item" href="/line-interactive-v2">line-interactive-v2</a></li>
+                  <li><a class="dropdown-item" href="/line-interactive-v3">line-interactive-v3</a></li>
+                  <li><a class="dropdown-item" href="/line-interactive-v4">line-interactive-v4</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  BRUSH
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="/brush-v1">line-basic-v1</a></li>
+                  <li><a class="dropdown-item" href="/brush-v2">line-basic-v2</a></li>
+                  <li><a class="dropdown-item" href="/brush-v3">line-basic-v3</a></li>
+                  <li><a class="dropdown-item" href="/brush-v4">line-basic-v4</a></li>
+                  <li><a class="dropdown-item" href="/brush-v5">line-basic-v5</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      {% block content %}
+        
+      {% endblock content %}
+
+</body>
+</html>

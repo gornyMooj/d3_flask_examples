@@ -1,0 +1,166 @@
+{# home.html #}
+{% extends 'index.html' %}
+
+{% block head %}
+    <style>
+        .line {
+            fill: none;
+            stroke: steelblue;
+            stroke-width: 2;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            shape-rendering: crispEdges;
+        }
+
+        .axis text {
+            font-size: 12px;
+        }
+
+        #myplot {
+            background-color: rgb(236, 232, 232);
+        }
+
+        .dot {
+            fill: steelblue;
+            stroke: #fff;
+        }
+
+        .grid line {
+            stroke: lightgray;
+            stroke-opacity: 0.7;
+            shape-rendering: crispEdges;
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<div id="myplot"></div>
+
+
+<script>
+    // Set dimensions and margins
+    const margin = {top: 20, right: 20, bottom: 30, left: 50};
+    const width = 800 - margin.left - margin.right;
+    const height = 400  - margin.top - margin.bottom;
+
+    
+   let data = [
+    {"x_data" : 2, "y_data": 10},
+    {"x_data" : 3, "y_data": 23},
+    {"x_data" : 4, "y_data": 12},
+    {"x_data" : 5, "y_data": 2},
+    {"x_data" : 6, "y_data": 3},
+    {"x_data" : 7, "y_data": 29},
+    {"x_data" : 8, "y_data": 21},
+    {"x_data" : 9, "y_data": 15},
+    {"x_data" : 10, "y_data": 10},
+   ]
+
+   console.log()
+
+   let domain_x = d3.extent(data, d => d.x_data)
+   console.log(domain_x) // returns [2, 10]
+   const x = d3.scaleLinear()
+        .domain([0, domain_x[1]]) // [0, 10] instead of [2, 10]
+        .range([0, width]); 
+
+    let domain_y = d3.extent(data, d => d.y_data)
+    console.log(domain_y) // returns [2, 29]
+    const y = d3.scaleLinear()
+        .domain([0, domain_y[1]]) // [0, 29] instead of [2, 29]
+        .range([height, 0]);
+
+
+    
+    let myPlot = d3.select("#myplot").append("svg")
+        .attr("width", width + margin.left + margin.right )
+        .attr("height", height + margin.top + margin.bottom)
+        .style("background-color", "rgba(240, 252, 180, .2)")
+        .append("g")
+        .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")"); // moves plot
+
+    
+    // Create axes
+    function range(start, stop, step) {
+        return Array.from({ length: Math.ceil((stop - start) / step) }, (v, i) => start + i * step);
+    };	
+    console.log( range(0, domain_x[1] + 1, 1) )
+
+
+    myPlot.append("g")
+        .attr("class", "x-axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x).tickValues(range(0, domain_x[1] + 1, 1)));
+
+    
+    myPlot.append("g")
+        .attr("class", "y-axis")
+        .call(d3.axisLeft(y).tickValues(range(0, domain_y[1] + 1, 1)));  // range(0, domain_x[1] + 1, 1)  returns [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  
+
+    console.log( range(0, domain_y[1] + 5, 5) )
+
+    // creates and adds grid
+    const gridX = myPlot.append("g")
+        .attr("class", "grid")
+        .selectAll(".x-grid-line")
+        .data(x.ticks()) // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        .enter().append("line")
+        .attr("class", "x-grid-line")
+        .attr("x1", d => x(d))
+        .attr("x2", d => x(d))
+        .attr("y1", 0)
+        .attr("y2", height);
+    
+    // y grid is every 5 ticks
+    const gridY = myPlot.append("g")
+        .attr("class", "grid")
+        .selectAll(".y-grid-line")
+        .data( range(0, domain_y[1] + 5, 5) ) // [0, 5, 10, 15, 20, 25, 30]
+        .enter().append("line")
+        .attr("class", "y-grid-line")
+        .attr("y1", d => y(d))
+        .attr("y2", d => y(d))
+        .attr("x1", 0)
+        .attr("x2", width);
+
+
+
+
+     
+        
+    // calculate line
+    const line = d3.line()
+        .x(d => x(d.x_data))
+        .y(d => y(d.y_data));
+
+    // add line to svg
+    const linePath = myPlot.append("path")
+        .data([data])
+        .attr("class", "line")
+        .attr("d", line)
+
+
+    // adding dot points data 
+    myPlot.selectAll(".dot")
+        .data(data)
+        .enter().append("circle")
+        .attr("class", "dot")
+        .attr("r", 5)
+        .attr("cx", d => x(d.x_data))
+        .attr("cy", d => y(d.y_data))
+
+
+</script>
+
+
+
+
+
+
+{% endblock content %}

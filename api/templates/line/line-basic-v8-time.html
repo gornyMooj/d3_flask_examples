@@ -1,0 +1,149 @@
+{# home.html #}
+{% extends 'index.html' %}
+
+{% block head %}
+    <style>
+        .line {
+            fill: none;
+            stroke: steelblue;
+            stroke-width: 2;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            shape-rendering: crispEdges;
+        }
+
+        .axis text {
+            font-size: 12px;
+        }
+
+        #myplot {
+            background-color: rgb(236, 232, 232);
+        }
+
+        .dot {
+            fill: steelblue;
+            stroke: #fff;
+        }
+
+        .grid line {
+            stroke: lightgray;
+            stroke-opacity: 0.7;
+            shape-rendering: crispEdges;
+        }
+
+        .toolpit {
+            position: absolute;
+            background-color: steelblue;
+            color: white;
+            font-weight: 600;
+            border: 1px solid white;
+            padding: 6px;
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<div id="myplot"></div>
+<script src="/static/data/minutes_bme_sample_data.js"></script>
+
+<br>
+<h5 style="text-transform: uppercase;">Description:</h5>
+<ul>
+    <li>no zoom</li>
+    <li>no toolpit</li>
+</ul>
+
+<script>
+
+    // 
+    
+    const margin = {top: 20, right: 20, bottom: 30, left: 50};
+    const width = 800 - margin.left - margin.right;
+    const height = 400  - margin.top - margin.bottom;
+
+     // parsing data
+     const data = minutes_bme_sample_data.map(d => ({
+        date: new Date(d.date),
+        temp: d.temp,
+        humidity: d.humidity,
+        pressure: d.pressure
+    }));
+
+    console.log(data)
+
+    // scales
+    const x = d3.scaleTime()
+        .domain(d3.extent(data, d => d.date))
+        .range([0, width]);
+
+    const y = d3.scaleLinear()
+        .domain([0, d3.max(data, d => d.temp) + 2])
+        // .domain([d3.min(data, d => d.temp) - 1, d3.max(data, d => d.temp) + 1])
+        .range([height, 0]);
+
+    
+    let myPlot = d3.select("#myplot").append("svg")
+        .attr("width", width + margin.left + margin.right )
+        .attr("height", height + margin.top + margin.bottom)
+        .style("background-color", "rgba(240, 252, 180, .2)")
+        .append("g")
+        .attr("class", "plot")
+        .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")"); // moves plot
+
+    
+
+    // axes
+    const xAxis = d3.axisBottom(x);
+    const yAxis = d3.axisLeft(y);
+
+    const xAxisGroup = myPlot.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .attr("class", "xAxis")
+        .call(xAxis);
+
+    const yAxisGroup = myPlot.append("g")
+        .attr("class", "yAxis")
+        .call(yAxis);
+
+
+    // creating Y grid lines
+    let ticks = yAxis.scale().ticks() // thisgives you the list of the current ticks for the selected axis - e.g.  [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]
+    console.log(ticks)
+
+    const gridY = myPlot.append("g")
+        .attr("class", "grid")
+        .selectAll(".y-grid-line")
+        .data( ticks ) 
+        .enter().append("line")
+        .attr("class", "y-grid-line")
+        .attr("y1", d => y(d))
+        .attr("y2", d => y(d))
+        .attr("x1", 0)
+        .attr("x2", width)
+        .attr("stroke-opacity", 0.1);
+
+
+    // adding line to the chart
+    const line = d3.line()
+        .x(d => x(d.date))
+        .y(d => y(d.temp));
+
+    const linePath = myPlot.append("path")
+        .datum(data)
+        .attr("class", "line")
+        .attr("d", line);
+
+</script>
+
+
+
+
+
+
+{% endblock content %}

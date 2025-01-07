@@ -1,0 +1,228 @@
+{# home.html #}
+{% extends 'index.html' %}
+
+{% block head %}
+    <style>
+        .area {
+            fill: steelblue;
+            clip-path: url(#clip);
+        }
+
+        .zoom {
+        cursor: move;
+        fill: none;
+        pointer-events: all;
+        }
+
+        .dot {
+        fill: steelblue;
+        stroke: #fff;
+        }
+        h3, p, div {
+            margin-left: 20px;
+        }
+
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<h3>Data from the weather station without points. Only line chart.</h3>
+
+
+
+<svg width="960" height="500"></svg>
+<script src="/static/data/hour_bme_feeds.js"></script>
+
+<script>
+
+    var data = hour_bme_feeds.map(d => ({
+        date: new Date(d.created_at),
+        temp: d.temp,
+        outside_temp: d.outside_temp,
+        humidity: d.humidity,
+        outside_humidity: d.outside_humidity,
+        winnd_speed: d.winnd_speed
+    }));
+
+
+    console.log(data);
+
+
+    var svg = d3.select("svg"),
+        margin = {top: 20, right: 20, bottom: 110, left: 40},
+        width = +svg.attr("width") - margin.left - margin.right,
+        height = +svg.attr("height") - margin.top - margin.bottom,
+
+        margin2 = {top: 430, right: 20, bottom: 30, left: 40},
+        height2 = +svg.attr("height") - margin2.top - margin2.bottom;
+
+    var parseDate = d3.timeParse("%b %Y");
+
+
+    var x = d3.scaleTime().range([0, width]),
+        y = d3.scaleLinear().range([height, 0]),
+        y2 = d3.scaleLinear().range([height2, 0])
+        x2 = d3.scaleTime().range([0, width]);
+
+    var xAxis = d3.axisBottom(x),
+        yAxis = d3.axisLeft(y),
+        xAxis2 = d3.axisBottom(x2);
+
+    var line1 = d3.line()
+        .curve(d3.curveMonotoneX)
+        .x(function(d) { return x(d.date) })
+        .y(function(d) { return y(d.temp) });
+
+    var line2 = d3.line()
+        .curve(d3.curveMonotoneX)
+        .x(function(d) { return x2(d.date) })
+        .y(function(d) { return y2(d.temp) });
+
+    svg.append("defs").append("clipPath")
+        .attr("id", "clip")
+        .append("rect")
+        .attr("width", width)
+        .attr("height", height);
+
+    var focus = svg.append("g") // the panel on the top
+        .attr("class", "focus")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var axes = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
+
+    var context = svg.append("g") // the lower panel 
+        .attr("class", "context")
+        .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+    
+    var div = d3.select("body").append("div")	
+        .attr("class", "tooltip")				
+        .style("opacity", 0);
+
+    x.domain(d3.extent(data, function(d) { return d.date; }));
+    y.domain([0, d3.max(data, function(d) { return d.temp; })]);
+    x2.domain(x.domain());
+    y2.domain(y.domain());
+
+
+    focus.append("path")
+        .datum(data)
+        .attr("clip-path", "url(#clip)")
+        .attr("class", "line")
+        .attr("fill", "none")
+        .attr("stroke", "steelblue")
+        .attr("stroke-width", 1.5)
+        .attr("d", line1);
+
+    axes.append("g")
+        .attr("class", "axis axis--x")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);  // for x line1 displayed in focus 
+
+    axes.append("g")
+        .attr("class", "axis axis--y")
+        .call(yAxis);  // for y line1 displayed in focus
+
+    context.append("path")
+        .datum(data)
+        .attr("class", "line")
+        .attr("fill", "none")
+        .attr("stroke", "steelblue")
+        .attr("stroke-width", 1.5)
+        .attr("d", line2); // for y2 and x2 line2 displayed in focus the one o the bottom
+
+    context.append("g")
+        .attr("class", "axis axis--x")
+        .attr("transform", "translate(0," + height2 + ")")
+        .call(xAxis2); // for y2 and x2 line2 displayed in focus the one o the bottom
+
+    // Add global flags to prevent recursive calls
+    let brushing = false;
+    let zooming = false;
+
+    var brush = d3.brushX()
+        .extent([[0, 0], [width, height2]])
+        .on("brush end", brushed);
+
+    var zoom = d3.zoom()
+        .scaleExtent([1, Infinity])
+        .translateExtent([[0, 0], [width, height]])
+        .extent([[0, 0], [width, height]])
+        .on("zoom", zoomed);
+
+    context.append("g")
+        .attr("class", "brush")
+        .call(brush)
+        // line2 has no domain  y2.domain(y.domain());
+        .call(brush.move, x.range());  // makes brush to be on entire view in the context and uses x axis not x1 axis
+        // x.range() is [0,900]
+
+    focus.append("rect")
+        .attr("class", "zoom")
+        .attr("width", width)
+        .attr("height", height)
+        .lower();
+
+    focus.call(zoom);
+
+
+
+    function brushed(event) {
+        // Prevent handling brush event if it was triggered by zoom
+        if (zooming) return;
+
+        brushing = true; // Set the flag to indicate we're handling a brush event
+        const s = event.selection || x2.range(); // Handle case when brush is cleared
+        x.domain(s.map(x2.invert, x2)); // Update the x-domain based on the brush selection
+
+        // Update the line and axes in the focus area
+        focus.select(".line").attr("d", d3.line()
+            .x(function(d) { return x(d.date); })
+            .y(function(d) { return y(d.temp); })
+            .curve(d3.curveMonotoneX)
+        );
+
+
+        axes.select(".axis--x").call(xAxis); // Update x-axis in the focus area
+
+        // Update zoom transformation based on the brush
+        svg.select(".zoom").call(zoom.transform, d3.zoomIdentity
+            .scale(width / (s[1] - s[0]))
+            .translate(-s[0], 0));
+
+        brushing = false; // Reset the flag
+        console.log("brushed");
+    }
+
+    function zoomed(event) {
+        // Prevent handling zoom event if it was triggered by brush
+        if (brushing) return;
+
+        zooming = true; // Set the flag to indicate we're handling a zoom event
+        const t = event.transform; // Get the zoom transformation
+        x.domain(t.rescaleX(x2).domain()); // Update the x-domain based on zoom
+
+        // Update the line and axes in the focus area
+        focus.select(".line").attr("d", d3.line()
+            .x(function(d) { return x(d.date); })
+            .y(function(d) { return y(d.temp); })
+            .curve(d3.curveMonotoneX)
+        );
+
+
+        axes.select(".axis--x").call(xAxis); // Update x-axis in the focus area
+
+        // Update the brush based on the zoom transformation
+        context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
+
+        zooming = false; // Reset the flag
+        console.log("zoomed");
+    }
+
+
+</script>
+
+{% endblock content %}

@@ -1,0 +1,119 @@
+{# home.html #}
+{% extends 'index.html' %}
+
+{% block head %}
+    <style>
+        #chart {
+            background-color: white;
+        }
+        h3, p, div {
+            margin-left: 20px;
+        }
+
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<h3>Iris Dataset taken from KAGGLE</h3>
+<p>Very basic brush. It's only attched to the svg. There's no logic behind it.</p>
+
+
+<div id="chart"></div>
+
+
+
+<script src="/static/data/iris_data.js"></script>
+
+<script>
+    const data = iris;
+    console.log(data);
+
+    // chart dimensions
+    const margin = {top: 20, right: 20, bottom: 30, left: 50};
+    const width = 800 - margin.left - margin.right;
+    const height = 400  - margin.top - margin.bottom;
+
+    let myPlot = d3.select("#chart").append("svg")
+        .attr("width", width + margin.left + margin.right )
+        .attr("height", height + margin.top + margin.bottom)
+        .style("background-color", "rgba(240, 252, 180, .2)")
+        .append("g")
+        .attr("class", "plot")
+        .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")"); // moves plot
+
+     // the color scale.
+    const color = d3.scaleOrdinal()
+        .domain(data.map(d => d.species))
+        .range(d3.schemeCategory10);
+
+    // scales
+    const x = d3.scaleLinear()
+        .domain([d3.min(data, d => d.sepalLength) - 1, d3.max(data, d => d.sepalLength) + 1])
+        .range([0, width]);
+
+    const y = d3.scaleLinear()
+        .domain([d3.min(data, d => d.petalWidth) - 1, d3.max(data, d => d.petalWidth) + 1])
+        .range([height, 0]);
+
+    // axes
+    const xAxis = d3.axisBottom(x);
+    const yAxis = d3.axisLeft(y);
+
+    const xAxisGroup = myPlot.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .attr("class", "xAxis")
+        .call(xAxis)
+        .append("text")
+        .attr("fill", "black")
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "end")
+        .attr("transform","translate("+ width +", -10)")
+        .text("Sepal Length");
+
+    const yAxisGroup = myPlot.append("g")
+        .attr("class", "yAxis")
+        .call(yAxis)
+        .append("text")
+        .attr("fill", "black")
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "start")
+        .attr("transform","translate(10, 0)")
+        .text("Petal Width");
+
+    // plot
+    myPlot.selectAll(".dot")
+        .data(data)
+        .enter().append("circle")
+        .attr("class", "dot")
+        .attr("r", 4)
+        .attr("cx", d => x(d.sepalLength))
+        .attr("cy", d => y(d.petalWidth))
+        .attr("fill-opacity", 0.7)
+        .attr("fill", d => color(d.species));
+
+
+    // === BRUSH ===
+    // create brush with specified behavior if any
+    function brushed(event) {
+        console.log('brushed');
+    };
+    
+    const brushBehavior = d3.brush()
+        .on("brush", brushed);
+
+    // attaching brush to svg
+    let svg = d3.select("#chart svg");
+    svg.call(brushBehavior); 
+    
+
+</script>
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,254 @@
+{# home.html #}
+{% extends 'index.html' %}
+
+{% block head %}
+    <style>
+        .line {
+            fill: none;
+            stroke: steelblue;
+            stroke-width: 2;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            shape-rendering: crispEdges;
+        }
+
+        .axis text {
+            font-size: 12px;
+        }
+
+        #myplot {
+            background-color: rgb(236, 232, 232);
+        }
+
+        .dot {
+            fill: steelblue;
+            stroke: #fff;
+        }
+
+        .grid line {
+            stroke: lightgray;
+            stroke-opacity: 0.7;
+            shape-rendering: crispEdges;
+        }
+
+        .toolpit {
+            position: absolute;
+            background-color: steelblue;
+            color: white;
+            font-weight: 600;
+            border: 1px solid white;
+            padding: 6px;
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<div id="myplot"></div>
+
+
+<script>
+    // https://observablehq.com/@d3/zoomable-area-chart
+    // Set dimensions and margins
+    // https://www.youtube.com/watch?v=Cusu5k_4xeY
+    
+    const margin = {top: 20, right: 20, bottom: 30, left: 50};
+    const width = 800 - margin.left - margin.right;
+    const height = 400  - margin.top - margin.bottom;
+
+    
+    // adding dot points data + TOOLPIT
+    const toolPit = d3.select("body").append("div")
+        .attr("class", "toolpit")
+        .style("display", "none")
+
+    function getBoxSizeX(e) {
+        let toolPitWidth = document.querySelector(".toolpit").getBoundingClientRect().width;
+        toolPitWidth = (toolPitWidth / 2).toFixed();
+        return e.pageX - toolPitWidth;
+    }
+
+    function getBoxSizeY(e) {
+        let toolPitHeight = document.querySelector(".toolpit").getBoundingClientRect().height;
+        return e.pageY - toolPitHeight- 6;  // 6 is margin
+    }
+
+   let data = [
+    {"x_data" : 2, "y_data": 10},
+    {"x_data" : 3, "y_data": 23},
+    {"x_data" : 4, "y_data": 12},
+    {"x_data" : 5, "y_data": 2},
+    {"x_data" : 6, "y_data": 3},
+    {"x_data" : 7, "y_data": 29},
+    {"x_data" : 8, "y_data": 21},
+    {"x_data" : 9, "y_data": 15},
+    {"x_data" : 10, "y_data": 10},
+   ]
+
+   console.log()
+
+   let domain_x = d3.extent(data, d => d.x_data)
+   console.log(domain_x) // returns [2, 10]
+   const x = d3.scaleLinear()
+        .domain([0, domain_x[1]]) // [0, 10] instead of [2, 10]
+        .range([0, width]); 
+
+    let domain_y = d3.extent(data, d => d.y_data)
+    console.log(domain_y) // returns [2, 29]
+
+    const y = d3.scaleLinear()
+        .domain([0, domain_y[1]]) // [0, 29] instead of [2, 29]
+        .range([height, 0]);
+
+    const yAxis = d3.axisLeft(y); // when you pass tickValues then when zoomed ticks are hard coded; only values specified in the domain are displayed
+        //tickValues(range(0, domain_y[1] + 1, 1));
+
+    const xAxis = d3.axisBottom(x);
+
+    let myPlot = d3.select("#myplot").append("svg")
+        .attr("width", width + margin.left + margin.right )
+        .attr("height", height + margin.top + margin.bottom)
+        .style("background-color", "rgba(240, 252, 180, .2)")
+        .append("g")
+        .attr("class", "plot")
+        .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")"); // moves plot
+
+    //to restrict the g region of the element in which your points are drawn using a clipPath
+    myPlot.append("clipPath")
+        .attr("id", "clip")
+        .append("rect")
+        .attr("width", width)
+        .attr("height", height);
+
+    
+    // Create axes
+    function range(start, stop, step) {
+        return Array.from({ length: Math.ceil((stop - start) / step) }, (v, i) => start + i * step);
+    };	
+    console.log( range(0, domain_x[1] + 1, 1) )
+
+
+    const xAxisGroup = myPlot.append("g")
+        .attr("class", "x-axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+    
+    const yAxisGroup = myPlot.append("g")
+        .attr("class", "y-axis")
+        .call(yAxis); // range(0, domain_x[1] + 1, 1)  returns [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  
+        
+
+    console.log( range(0, domain_y[1] + 5, 5) )
+
+    // creates and adds grid
+    const gridX = myPlot.append("g")
+        .attr("class", "grid")
+        .selectAll(".x-grid-line")
+        .data(x.ticks()) // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        .enter().append("line")
+        .attr("class", "x-grid-line")
+        .attr("x1", d => x(d))
+        .attr("x2", d => x(d))
+        .attr("y1", 0)
+        .attr("y2", height);
+    
+
+    // y grid is every 5 ticks
+    const gridY = myPlot.append("g")
+        .attr("class", "grid")
+        .selectAll(".y-grid-line")
+        .data( range(0, domain_y[1] + 5, 5) ) // [0, 5, 10, 15, 20, 25, 30]
+        .enter().append("line")
+        .attr("class", "y-grid-line")
+        .attr("y1", d => y(d))
+        .attr("y2", d => y(d))
+        .attr("x1", 0)
+        .attr("x2", width);
+
+
+    // calculate line
+    const line = d3.line()
+        .x(d => x(d.x_data))
+        .y(d => y(d.y_data));
+
+
+    // add line to svg
+    const linePath = myPlot.append("path")
+        .data([data])
+        .attr("class", "line")
+        .attr("d", line)
+        .attr("clip-path", "url(#clip)");
+
+
+    // adding dot points data
+    myPlot.selectAll(".dot")
+        .data(data)
+        .enter().append("circle")
+        .attr("class", "dot")
+        .attr("r", 9)
+        .attr("cx", d => x(d.x_data))
+        .attr("cy", d => y(d.y_data))
+        .attr("clip-path", "url(#clip)")  // THIS ADDED TO THE ELEMENTS USES CLIP TO PREVENT FROM DRAWING OUTSIDE chart
+        .on("mouseover", function(event, d) {
+            console.log("this", this)
+            
+            toolPit.html(`x: ${d.x_data}, y: ${d.y_data}`)
+                .style("display", "block")
+            
+            toolPit.style("left", (getBoxSizeX(event)) + "px")
+                .style("top", (getBoxSizeY(event)) + "px") 
+        })
+        .on("mouseout", function(event, d) {
+            toolPit.style("display", "none")
+        } )
+
+    // create zoom 
+    const zoomBehavior = d3.zoom()
+        .scaleExtent([1, Infinity])
+        .on("zoom", (event) => {
+            // console.log(event.transform)
+
+            const transform = event.transform;
+            
+            // scales with zoom transform
+            const newX = transform.rescaleX(x);
+            const newY = transform.rescaleY(y);
+
+            // updates line
+            linePath.attr("d", line.x(d => newX(d.x_data)).y(d => newY(d.y_data)));
+
+            // updates points
+            myPlot.selectAll(".dot")
+                .attr("cx", d => newX(d.x_data))
+                .attr("cy", d => newY(d.y_data));
+
+            // updates grid lines
+            gridX.attr("x1", d => newX(d))
+                .attr("x2", d => newX(d));
+            gridY.attr("y1", d => newY(d))
+                .attr("y2", d => newY(d));
+
+            yAxisGroup.call(yAxis.scale(newY));
+            xAxisGroup.call(xAxis.scale(newX));
+        } );
+
+    // link zoom to svg
+    let svg = d3.select("#myplot svg")
+    svg.call(zoomBehavior);
+
+       
+
+</script>
+
+
+
+
+
+
+{% endblock content %}

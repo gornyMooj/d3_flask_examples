@@ -1,0 +1,131 @@
+{# home.html #}
+{% extends 'index.html' %}
+
+{% block head %}
+<style type="text/css">
+    h3 {
+        margin-left: 20px;
+        text-transform: capitalize;
+    }
+
+    #container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #svgs-container {
+        display:flex;
+        flex-direction: row;
+        margin: 0 auto;
+        width:100%;
+        
+    }
+    svg{
+        border: 1px solid gray;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<h3>Interactive Line Graph</h3>
+
+<div id="container">
+    <p> Click the pink box to draw a line on the graph.
+    </p>
+    <div id="svgs-container">
+        <div id="myplot"></div>
+        <div id="board"></div>
+    </div>
+
+</div>
+
+
+<script>
+
+
+    var width = 150;
+    var height = 500;
+
+    var data = [
+        { x: 0, y: 0 },
+        { x: 0, y: height}
+        ];
+
+    var myplot = d3.select("#myplot").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+        
+    var line = d3.line()
+        .x(d => x(d.x))
+        .y(d => y(d.y));
+
+    var x = d3.scaleLinear()
+        .domain([0, width]) // d3.extent returns [min,max] function (d) { return d.x }
+        .range([0, width]);
+    
+    var y = d3.scaleLinear()
+        .domain([height, 0])
+        .range([height, 0]);
+        
+
+    var board = d3.select("#board").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .style("background-color", "rgba(255, 51, 153, .2)");
+
+
+    // Create axes
+    function range(start, stop, step) {
+        return Array.from({ length: Math.ceil((stop - start) / step) }, (v, i) => start + i * step);
+    };	
+    myplot.append("g")
+        .attr("class", "x-axis")
+        .call(d3.axisBottom(x).tickValues(range(0, width, 25)));
+        
+    myplot.append("g")
+        .attr("class", "y-axis")
+        .call(d3.axisRight(y).tickValues(range(0, height, 50)));
+        
+    console.log(range(0, 500, 50));
+        
+    // events
+    board.on("mouseenter", function() {
+        d3.select(this).style("cursor", "pointer");
+    });
+    board.on("mouseout", function() {
+        d3.select(this).style("cursor", "default");
+    });
+    board.on("click", function(event) {
+        const [x, y] = d3.pointer(event);
+        data.push({x:x, y:y});
+        data.sort((a, b) => d3.ascending(a.y, b.y)); // sort data
+        updateChart(data);
+    });
+
+    function updateChart(newData) {
+        const linePath = myplot.selectAll(".line")
+            .data([newData]); 
+            
+        linePath
+            .enter()
+            .append("path")
+            .attr("class", "line")
+            .merge(linePath)  // Merges enter selection with the update selection
+            .attr("d", line)
+            .attr("fill", "none")
+            .attr("stroke", "steelblue")
+            .attr("stroke-width", 2);
+    
+    };
+    data.sort((a, b) => d3.ascending(a.y, b.y)); // sort data
+    updateChart(data);   
+    
+</script>
+
+
+
+
+
+{% endblock content %}

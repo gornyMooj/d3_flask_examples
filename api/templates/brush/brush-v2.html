@@ -1,0 +1,168 @@
+{# home.html #}
+{% extends 'index.html' %}
+
+{% block head %}
+    <style>
+        #chart {
+            background-color: white;
+        }
+        h3, p, div {
+            margin-left: 20px;
+        }
+
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<h3>Iris Dataset taken from KAGGLE</h3>
+<p>Counts brushed points.</p>
+
+
+<div id="chart"></div>
+
+<script src="/static/data/iris_data.js"></script>
+
+<script>
+    const data = iris;
+
+    // Assigning unique identifier to the dataset
+    data.forEach((d, i) => {
+        d.id = i;
+    });
+
+    // Chart dimensions
+    const margin = { top: 20, right: 20, bottom: 30, left: 50 };
+    const width = 800 - margin.left - margin.right;
+    const height = 400 - margin.top - margin.bottom;
+
+    // Used in brushing
+    let highlighted = new Set();
+
+    let myPlot = d3.select("#chart").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .style("background-color", "rgba(240, 252, 180, .2)")
+        .append("g")
+        .attr("class", "plot")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    // Color scale
+    const color = d3.scaleOrdinal()
+        .domain(data.map(d => d.species))
+        .range(d3.schemeCategory10);
+
+    // Scales
+    const x = d3.scaleLinear()
+        .domain([d3.min(data, d => d.sepalLength) - 1, d3.max(data, d => d.sepalLength) + 1])
+        .range([0, width]);
+
+    const y = d3.scaleLinear()
+        .domain([d3.min(data, d => d.petalWidth) - .5, d3.max(data, d => d.petalWidth) + 1])
+        .range([height, 0]);
+
+    // Axes
+    const xAxis = d3.axisBottom(x);
+    const yAxis = d3.axisLeft(y);
+
+    myPlot.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .attr("class", "xAxis")
+        .call(xAxis)
+        .append("text")
+        .attr("fill", "black")
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "end")
+        .attr("transform", `translate(${width}, -10)`)
+        .text("Sepal Length");
+
+    myPlot.append("g")
+        .attr("class", "yAxis")
+        .call(yAxis)
+        .append("text")
+        .attr("fill", "black")
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "start")
+        .attr("transform", "translate(10, 0)")
+        .text("Petal Width");
+
+    const counterTitle = myPlot.append("g")
+        .attr("class", "counter")
+        .append("text")
+        .attr("fill", "black")
+        .text("SELECTED POINTS: 0 ")
+        .attr("transform", `translate(${width / 2}, 0)`)
+
+
+    // Plot dots
+    const dots = myPlot.selectAll(".dot")
+        .data(data)
+        .enter().append("circle")
+        .attr("class", "dot")
+        .attr("r", 4)
+        .attr("cx", d => x(d.sepalLength))
+        .attr("cy", d => y(d.petalWidth))
+        .attr("fill-opacity", 0.7)
+        .attr("fill", d => color(d.species))
+        .attr("stroke", "none")
+        .attr("stroke-width", 0);
+
+    // Brushed function
+    function brushed(event) {
+        // Handle cleared brush
+        if (!event.selection) {
+            highlighted.clear();
+            updateDots();
+            counterTitle.text(`SELECTED POINTS: 0 `)
+            return;
+        }
+
+        // Extract brush bounds in pixel coordinates
+        const [[x0, y0], [x1, y1]] = event.selection;
+
+        // Map pixel coordinates to data domain
+        const xMin = x.invert(x0);
+        const xMax = x.invert(x1);
+        const yMin = y.invert(y1); // Lower bound (flipped)
+        const yMax = y.invert(y0); // Upper bound (flipped)
+
+        highlighted.clear();
+        data.forEach(d => {
+            if (
+                d.sepalLength >= xMin &&
+                d.sepalLength <= xMax &&
+                d.petalWidth >= yMin &&
+                d.petalWidth <= yMax
+            ) {
+                highlighted.add(d.id);
+            }
+        });
+
+        updateDots();
+        updateCounter();
+    }
+
+    // Update dots to reflect brush selection
+    function updateDots() {
+        dots.attr("stroke", d => (highlighted.has(d.id) ? "black" : "none"))
+            .attr("stroke-width", d => (highlighted.has(d.id) ? 2 : 0));
+    };
+
+    function updateCounter() {
+        counterTitle.text(`SELECTED POINTS: ${ highlighted.size} `)
+    }
+
+    // Brush behavior
+    const brushBehavior = d3.brush()
+        .extent([[0, 0], [width, height]])
+        .on("brush", brushed)
+        .on("end", brushed);
+
+    // Attach brush to the plot
+    myPlot.append("g")
+        .attr("class", "brush")
+        .call(brushBehavior);
+</script>
+
+{% endblock content %}
