@@ -88,5 +88,13 @@ def line_brush_v4():
 def line_brush_v5():
     return render_template('/brush/brush-v5.html')
 
+@app.route('/brush-v6')
+def line_brush_v6():
+    return render_template('/brush/brush-v6.html')
+
+@app.route('/brush-v7')
+def line_brush_v7():
+    return render_template('/brush/brush-v7.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -14,12 +14,21 @@
         pointer-events: all;
         }
 
-        .dot {
-        fill: steelblue;
-        stroke: #fff;
+        .points_inside {
+            fill: steelblue;
+            stroke: #fff;
         }
         h3, p, div, li {
             margin-left: 20px;
+        }
+        .toolpit {
+            font-size: 12px;
+            position: absolute;
+            background-color: steelblue;
+            color: white;
+            font-weight: 600;
+            border: 1px solid white;
+            padding: 6px;
         }
 
 
@@ -34,9 +43,8 @@
 
 <h3>Data from the weather station with points.</h3>
 <li>sensor readings are collected every hour</li>
-<li>all points are displayed at the day zoom level</li>
-<li>this is not the most efficient way of handling the data; in the next example the code displays point data only in the current range</li>
-<li>toolpit is not implemented</li>
+<li>only points in the current extent are displayed</li>
+
 
 
 <script src="/static/data/hour_bme_feeds.js"></script>
@@ -52,6 +60,21 @@
         winnd_speed: d.winnd_speed
     }));
 
+    // adding dot points data + TOOLPIT
+    const toolPit = d3.select("body").append("div")
+        .attr("class", "toolpit")
+        .style("display", "none");
+
+    function getBoxSizeX(e) {
+        let toolPitWidth = document.querySelector(".toolpit").getBoundingClientRect().width;
+        toolPitWidth = (toolPitWidth / 2).toFixed();
+        return e.pageX - toolPitWidth;
+    }
+
+    function getBoxSizeY(e) {
+        let toolPitHeight = document.querySelector(".toolpit").getBoundingClientRect().height;
+        return e.pageY - toolPitHeight- 6;  // 6 is margin
+    }
 
     console.log(data);
 
@@ -76,15 +99,25 @@
         yAxis = d3.axisLeft(y),
         xAxis2 = d3.axisBottom(x2);
 
-    var line1 = d3.line()
+    var line1_inside = d3.line()
         .curve(d3.curveMonotoneX)
         .x(function(d) { return x(d.date) })
         .y(function(d) { return y(d.temp) });
 
-    var line2 = d3.line()
+    var line2_inside = d3.line()
         .curve(d3.curveMonotoneX)
         .x(function(d) { return x2(d.date) })
         .y(function(d) { return y2(d.temp) });
+
+    var line1_outside = d3.line()
+        .curve(d3.curveMonotoneX)
+        .x(function(d) { return x(d.date) })
+        .y(function(d) { return y(d.outside_temp) });
+
+    var line2_outside = d3.line()
+        .curve(d3.curveMonotoneX)
+        .x(function(d) { return x2(d.date) })
+        .y(function(d) { return y2(d.outside_temp) });
 
     svg.append("defs").append("clipPath")
         .attr("id", "clip")
@@ -108,8 +141,14 @@
         .attr("class", "tooltip")				
         .style("opacity", 0);
 
+    // scale domains
+    let tempInside = d3.extent(data, function(d) { return d.temp; });
+    let tempOutside = d3.extent(data, function(d) { return d.outside_temp; });
+    let tempGFullRange =  d3.extent(tempInside.concat(tempOutside), function(d) { return d; });
+    console.log(tempGFullRange);
+
     x.domain(d3.extent(data, function(d) { return d.date; }));
-    y.domain([0, d3.max(data, function(d) { return d.temp; })]);
+    y.domain([tempGFullRange[0] - 1, tempGFullRange[1] + 1]);
     x2.domain(x.domain());
     y2.domain(y.domain());
 
@@ -117,35 +156,68 @@
     focus.append("path")
         .datum(data)
         .attr("clip-path", "url(#clip)")
-        .attr("class", "line")
+        .attr("class", "line1_outside")
+        .attr("fill", "none")
+        .attr("stroke", "red")
+        .attr("stroke-width", 1.5)
+        .attr("d", line1_outside);
+
+
+    focus.append("path")
+        .datum(data)
+        .attr("clip-path", "url(#clip)")
+        .attr("class", "line1_inside")
         .attr("fill", "none")
         .attr("stroke", "steelblue")
         .attr("stroke-width", 1.5)
-        .attr("d", line1);
+        .attr("d", line1_inside);
 
     axes.append("g")
         .attr("class", "axis axis--x")
         .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);  // for x line1 displayed in focus 
+        .call(xAxis)  // for x line1 displayed in focus 
+        .append("text")
+        .attr("fill", "black")
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "end")
+        .attr("transform", `translate(${width}, -10)`)
+        .text("Date");
+        
 
     axes.append("g")
         .attr("class", "axis axis--y")
-        .call(yAxis);  // for y line1 displayed in focus
+        .call(yAxis)  // for y line1 displayed in focus
+        .append("text")
+        .attr("fill", "black")
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "start")
+        .attr("transform", "translate(10, 0)")
+        .text("Temperature");
+
 
     context.append("path")
         .datum(data)
-        .attr("class", "line")
+        .attr("class", "line1_outside")
+        .attr("fill", "none")
+        .attr("stroke", "red")
+        .attr("stroke-width", 1.5)
+        .attr("d", line2_outside); // for y2 and x2 line2 displayed in focus the one o the bottom
+
+
+    context.append("path")
+        .datum(data)
+        .attr("class", "line1_inside")
         .attr("fill", "none")
         .attr("stroke", "steelblue")
         .attr("stroke-width", 1.5)
-        .attr("d", line2); // for y2 and x2 line2 displayed in focus the one o the bottom
+        .attr("d", line2_inside); // for y2 and x2 line2 displayed in focus the one o the bottom
 
     context.append("g")
         .attr("class", "axis axis--x")
         .attr("transform", "translate(0," + height2 + ")")
         .call(xAxis2); // for y2 and x2 line2 displayed in focus the one o the bottom
 
-    var points = focus.append('g')
+    var points_inside = focus.append('g')
         .attr("clip-path", "url(#clip)")
 
 
@@ -153,7 +225,7 @@
     let brushing = false;
     let zooming = false;
 
-    let pointsAdded = false;
+    let highlightedPoints = new Set();
 
     var brush = d3.brushX()
         .extent([[0, 0], [width, height2]])
@@ -184,36 +256,47 @@
     function display_points() {
         // checks the zoom level based based on tick vales
         // adds points & rescales them if needed
+        let [xMin, xMax] = x.domain();
+        highlightedPoints.clear(); // cleares current selection  
 
         // show/hide point data based on the tick values
         const tickValues = x.ticks()
         const tickInterval = tickValues[1] - tickValues[0];  // interval between ticks in miliseconds
         if (tickInterval <= 1000 * 60 * 60 * 24) {
-            console.log("show points")
             // adds points when days are displayed like 1, 2, 3, 4 etc
-            if(!pointsAdded) {
-                points.selectAll(".dot")
-                    .data(data)
-                    .enter().append("circle")
-                    .attr("class", "dot")
-                    .attr("cx", function(d, i) { return x(d.date) })
-                    .attr("cy", function(d) { return y(d.temp) })
-                    .attr("r", 3);
-                    pointsAdded = true;
-
-            } else if (pointsAdded) {
-                // rescales points based on the current zoom level
-                points.selectAll('circle')
-                    .attr("cx", function(d, i) { return x(d.date); })
-                    .attr("cy", function(d) { return y(d.temp); });
-            }
+            
+            // select data based on the current extent / selection
+            data.forEach(d => {
+                if (
+                    d.date >= xMin &&
+                    d.date <= xMax
+                ) {
+                    highlightedPoints.add(d);
+                }
+            });
+            const formatTime = d3.utcFormat("%d %B %Y %H:%M");
+            points_inside.selectAll('circle').remove()
+            points_inside.selectAll(".points_inside")
+                .data(highlightedPoints)
+                .enter().append("circle")
+                .attr("class", "points_inside")
+                .attr("cx", function(d, i) { return x(d.date) })
+                .attr("cy", function(d) { return y(d.temp) })
+                .attr("r", 3)
+                .on("mouseover", function(event, d) {
+                    toolPit.html(`date: ${formatTime(d.date)}, temp: ${d.temp}`)
+                        .style("display", "block")
+                    
+                    toolPit.style("left", (getBoxSizeX(event)) + "px")
+                        .style("top", (getBoxSizeY(event)) + "px") 
+                })
+                .on("mouseout", function(event, d) {
+                    toolPit.style("display", "none")
+                } )
 
         } else {
             // remove points
-            console.log("hide points")
-            pointsAdded = false;
-            points.selectAll('circle').remove()
-
+            points_inside.selectAll('circle').remove()
         }
     }
 
@@ -227,7 +310,14 @@
         x.domain(s.map(x2.invert, x2)); // Update the x-domain based on the brush selection
 
         // Update the line and axes in the focus area
-        focus.select(".line").attr("d", d3.line()
+        focus.select(".line1_outside").attr("d", d3.line()
+            .x(function(d) { return x(d.date); })
+            .y(function(d) { return y(d.outside_temp); })
+            .curve(d3.curveMonotoneX)
+        );
+
+        // Update the line and axes in the focus area
+        focus.select(".line1_inside").attr("d", d3.line()
             .x(function(d) { return x(d.date); })
             .y(function(d) { return y(d.temp); })
             .curve(d3.curveMonotoneX)
@@ -242,6 +332,7 @@
             .translate(-s[0], 0));
 
         // show/hide point data
+        toolPit.style("display", "none")
         display_points();
 
         brushing = false; // Reset the flag
@@ -255,8 +346,16 @@
         const t = event.transform; // Get the zoom transformation
         x.domain(t.rescaleX(x2).domain()); // Update the x-domain based on zoom
 
+         // Update the line and axes in the focus area
+         focus.select(".line1_outside").attr("d", d3.line()
+            .x(function(d) { return x(d.date); })
+            .y(function(d) { return y(d.outside_temp); })
+            .curve(d3.curveMonotoneX)
+        );
+
+
         // Update the line and axes in the focus area
-        focus.select(".line").attr("d", d3.line()
+        focus.select(".line1_inside").attr("d", d3.line()
             .x(function(d) { return x(d.date); })
             .y(function(d) { return y(d.temp); })
             .curve(d3.curveMonotoneX)
@@ -267,6 +366,7 @@
 
 
         // show/hide point data
+        toolPit.style("display", "none")
         display_points();
 
         // Update the brush based on the zoom transformation

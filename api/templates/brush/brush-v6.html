@@ -34,9 +34,8 @@
 
 <h3>Data from the weather station with points.</h3>
 <li>sensor readings are collected every hour</li>
-<li>all points are displayed at the day zoom level</li>
-<li>this is not the most efficient way of handling the data; in the next example the code displays point data only in the current range</li>
-<li>toolpit is not implemented</li>
+<li>only points in the current extent are displayed</li>
+
 
 
 <script src="/static/data/hour_bme_feeds.js"></script>
@@ -153,7 +152,7 @@
     let brushing = false;
     let zooming = false;
 
-    let pointsAdded = false;
+    let highlightedPoints = new Set();
 
     var brush = d3.brushX()
         .extent([[0, 0], [width, height2]])
@@ -184,6 +183,8 @@
     function display_points() {
         // checks the zoom level based based on tick vales
         // adds points & rescales them if needed
+        let [xMin, xMax] = x.domain();
+        highlightedPoints.clear(); // cleares current selection 
 
         // show/hide point data based on the tick values
         const tickValues = x.ticks()
@@ -191,29 +192,30 @@
         if (tickInterval <= 1000 * 60 * 60 * 24) {
             console.log("show points")
             // adds points when days are displayed like 1, 2, 3, 4 etc
-            if(!pointsAdded) {
-                points.selectAll(".dot")
-                    .data(data)
-                    .enter().append("circle")
-                    .attr("class", "dot")
-                    .attr("cx", function(d, i) { return x(d.date) })
-                    .attr("cy", function(d) { return y(d.temp) })
-                    .attr("r", 3);
-                    pointsAdded = true;
+            
+            // select data based on the current extent / selection
+            data.forEach(d => {
+                if (
+                    d.date >= xMin &&
+                    d.date <= xMax
+                ) {
+                    highlightedPoints.add(d);
+                }
+            });
 
-            } else if (pointsAdded) {
-                // rescales points based on the current zoom level
-                points.selectAll('circle')
-                    .attr("cx", function(d, i) { return x(d.date); })
-                    .attr("cy", function(d) { return y(d.temp); });
-            }
+            points.selectAll('circle').remove()
+            points.selectAll(".dot")
+                .data(highlightedPoints)
+                .enter().append("circle")
+                .attr("class", "dot")
+                .attr("cx", function(d, i) { return x(d.date) })
+                .attr("cy", function(d) { return y(d.temp) })
+                .attr("r", 3);
 
         } else {
             // remove points
             console.log("hide points")
-            pointsAdded = false;
             points.selectAll('circle').remove()
-
         }
     }
 
@@ -254,6 +256,7 @@
         zooming = true; // Set the flag to indicate we're handling a zoom event
         const t = event.transform; // Get the zoom transformation
         x.domain(t.rescaleX(x2).domain()); // Update the x-domain based on zoom
+
 
         // Update the line and axes in the focus area
         focus.select(".line").attr("d", d3.line()
