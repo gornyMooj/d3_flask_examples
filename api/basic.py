@@ -96,5 +96,9 @@ def line_brush_v6():
 def line_brush_v7():
     return render_template('/brush/brush-v7.html')
 
+@app.route('/brush-v8')
+def line_brush_v8():
+    return render_template('/brush/brush-v8.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

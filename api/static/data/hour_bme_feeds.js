@@ -1,4 +1,4 @@
-var hour_bme_feeds =[
+var hour_bme_feeds = [
   {
     "created_at": "2024-03-05T13:00:35+00:00",
     "temp": 22.386015625,
@@ -44358,5 +44358,2941 @@ var hour_bme_feeds =[
     "outside_temp": 3.5,
     "outside_humidity": 100,
     "winnd_speed": 2.9
+  },
+  {
+    "created_at": "2024-12-27T15:00:25+00:00",
+    "temp": 23.0481054688,
+    "humidity": 37.7391817909,
+    "outside_temp": 3.3,
+    "outside_humidity": 100,
+    "winnd_speed": 4
+  },
+  {
+    "created_at": "2024-12-27T16:00:42+00:00",
+    "temp": 22.6201953125,
+    "humidity": 38.2793196169,
+    "outside_temp": 3.2,
+    "outside_humidity": 100,
+    "winnd_speed": 5
+  },
+  {
+    "created_at": "2024-12-27T17:01:00+00:00",
+    "temp": 22.6040039063,
+    "humidity": 38.3804644576,
+    "outside_temp": 3,
+    "outside_humidity": 100,
+    "winnd_speed": 2.2
+  },
+  {
+    "created_at": "2024-12-27T18:00:17+00:00",
+    "temp": 22.1574023438,
+    "humidity": 40.5763397748,
+    "outside_temp": 3,
+    "outside_humidity": 100,
+    "winnd_speed": 2.9
+  },
+  {
+    "created_at": "2024-12-27T19:00:34+00:00",
+    "temp": 21.5271289063,
+    "humidity": 41.1818184433,
+    "outside_temp": 2.8,
+    "outside_humidity": 100,
+    "winnd_speed": 1.4
+  },
+  {
+    "created_at": "2024-12-27T20:00:52+00:00",
+    "temp": 20.8903515625,
+    "humidity": 41.5977883144,
+    "outside_temp": 2.8,
+    "outside_humidity": 100,
+    "winnd_speed": 5.4
+  },
+  {
+    "created_at": "2024-12-27T21:00:09+00:00",
+    "temp": 20.46296875,
+    "humidity": 41.5333340836,
+    "outside_temp": 2.8,
+    "outside_humidity": 100,
+    "winnd_speed": 2.2
+  },
+  {
+    "created_at": "2024-12-27T22:00:27+00:00",
+    "temp": 19.9683007813,
+    "humidity": 40.9416529652,
+    "outside_temp": 2.8,
+    "outside_humidity": 100,
+    "winnd_speed": 4.3
+  },
+  {
+    "created_at": "2024-12-28T00:00:02+00:00",
+    "temp": 19.2485351563,
+    "humidity": 40.2442489407,
+    "outside_temp": 2.8,
+    "outside_humidity": 100,
+    "winnd_speed": 5
+  },
+  {
+    "created_at": "2024-12-28T01:00:22+00:00",
+    "temp": 18.9122265625,
+    "humidity": 40.2904800508,
+    "outside_temp": 2.8,
+    "outside_humidity": 100,
+    "winnd_speed": 4
+  },
+  {
+    "created_at": "2024-12-28T02:00:40+00:00",
+    "temp": 18.5794140625,
+    "humidity": 40.7196600307,
+    "outside_temp": 2.8,
+    "outside_humidity": 100,
+    "winnd_speed": 5.4
+  },
+  {
+    "created_at": "2024-12-28T03:00:58+00:00",
+    "temp": 18.2799609375,
+    "humidity": 40.8230937258,
+    "outside_temp": 2.8,
+    "outside_humidity": 100,
+    "winnd_speed": 6.1
+  },
+  {
+    "created_at": "2024-12-28T04:00:15+00:00",
+    "temp": 17.929453125,
+    "humidity": 41.2769619574,
+    "outside_temp": 2.8,
+    "outside_humidity": 100,
+    "winnd_speed": 9
+  },
+  {
+    "created_at": "2024-12-28T05:00:34+00:00",
+    "temp": 17.7322265625,
+    "humidity": 41.3230423553,
+    "outside_temp": 2.8,
+    "outside_humidity": 100,
+    "winnd_speed": 7.2
+  },
+  {
+    "created_at": "2024-12-28T06:00:53+00:00",
+    "temp": 17.509140625,
+    "humidity": 41.510798034,
+    "outside_temp": 2.6,
+    "outside_humidity": 100,
+    "winnd_speed": 6.8
+  },
+  {
+    "created_at": "2024-12-28T07:00:11+00:00",
+    "temp": 19.0978320313,
+    "humidity": 39.1699561267,
+    "outside_temp": 2.7,
+    "outside_humidity": 100,
+    "winnd_speed": 6.1
+  },
+  {
+    "created_at": "2024-12-28T08:00:29+00:00",
+    "temp": 20.7178515625,
+    "humidity": 37.3995930476,
+    "outside_temp": 2.7,
+    "outside_humidity": 100,
+    "winnd_speed": 8.3
+  },
+  {
+    "created_at": "2024-12-28T09:00:46+00:00",
+    "temp": 21.8063867188,
+    "humidity": 36.7342252409,
+    "outside_temp": 2.5,
+    "outside_humidity": 100,
+    "winnd_speed": 8.3
+  },
+  {
+    "created_at": "2024-12-28T10:00:03+00:00",
+    "temp": 21.6323828125,
+    "humidity": 36.8115549071,
+    "outside_temp": 2.7,
+    "outside_humidity": 100,
+    "winnd_speed": 7.9
+  },
+  {
+    "created_at": "2024-12-28T11:00:21+00:00",
+    "temp": 21.2276953125,
+    "humidity": 38.3102964775,
+    "outside_temp": 2.8,
+    "outside_humidity": 100,
+    "winnd_speed": 8.3
+  },
+  {
+    "created_at": "2024-12-28T12:00:39+00:00",
+    "temp": 20.6248046875,
+    "humidity": 38.5718332422,
+    "outside_temp": 2.7,
+    "outside_humidity": 100,
+    "winnd_speed": 9
+  },
+  {
+    "created_at": "2024-12-28T13:00:58+00:00",
+    "temp": 20.0654101563,
+    "humidity": 38.7675158693,
+    "outside_temp": 2.5,
+    "outside_humidity": 100,
+    "winnd_speed": 9.4
+  },
+  {
+    "created_at": "2024-12-28T14:00:15+00:00",
+    "temp": 19.9844921875,
+    "humidity": 37.9819189282,
+    "outside_temp": 2.4,
+    "outside_humidity": 100,
+    "winnd_speed": 8.3
+  },
+  {
+    "created_at": "2024-12-28T15:00:43+00:00",
+    "temp": 21.9044726563,
+    "humidity": 37.1663778067,
+    "outside_temp": 2,
+    "outside_humidity": 100,
+    "winnd_speed": 8.3
+  },
+  {
+    "created_at": "2024-12-28T16:01:00+00:00",
+    "temp": 22.5711523438,
+    "humidity": 36.1947457021,
+    "outside_temp": 1.9,
+    "outside_humidity": 100,
+    "winnd_speed": 8.3
+  },
+  {
+    "created_at": "2024-12-28T17:00:17+00:00",
+    "temp": 22.5498828125,
+    "humidity": 36.4347530093,
+    "outside_temp": 1.9,
+    "outside_humidity": 100,
+    "winnd_speed": 7.6
+  },
+  {
+    "created_at": "2024-12-28T18:00:34+00:00",
+    "temp": 22.4158398438,
+    "humidity": 37.2711064978,
+    "outside_temp": 2,
+    "outside_humidity": 100,
+    "winnd_speed": 7.6
+  },
+  {
+    "created_at": "2024-12-28T19:00:52+00:00",
+    "temp": 23.77796875,
+    "humidity": 35.7123323907,
+    "outside_temp": 2,
+    "outside_humidity": 100,
+    "winnd_speed": 7.6
+  },
+  {
+    "created_at": "2024-12-28T20:00:08+00:00",
+    "temp": 24.8280664063,
+    "humidity": 34.0175250511,
+    "outside_temp": 2,
+    "outside_humidity": 100,
+    "winnd_speed": 7.9
+  },
+  {
+    "created_at": "2024-12-28T21:00:26+00:00",
+    "temp": 24.4122851563,
+    "humidity": 33.8354036682,
+    "outside_temp": 2,
+    "outside_humidity": 100,
+    "winnd_speed": 7.2
+  },
+  {
+    "created_at": "2024-12-28T22:00:44+00:00",
+    "temp": 23.8983984375,
+    "humidity": 34.2969165102,
+    "outside_temp": 2,
+    "outside_humidity": 100,
+    "winnd_speed": 7.2
+  },
+  {
+    "created_at": "2024-12-29T00:00:18+00:00",
+    "temp": 22.6343359375,
+    "humidity": 34.2988920914,
+    "outside_temp": 2,
+    "outside_humidity": 100,
+    "winnd_speed": 8.6
+  },
+  {
+    "created_at": "2024-12-29T01:00:36+00:00",
+    "temp": 22.0956835938,
+    "humidity": 34.6242829639,
+    "outside_temp": 2.2,
+    "outside_humidity": 100,
+    "winnd_speed": 9.7
+  },
+  {
+    "created_at": "2024-12-29T02:00:54+00:00",
+    "temp": 21.57671875,
+    "humidity": 35.2405383486,
+    "outside_temp": 2.2,
+    "outside_humidity": 100,
+    "winnd_speed": 9.4
+  },
+  {
+    "created_at": "2024-12-29T03:00:11+00:00",
+    "temp": 21.13515625,
+    "humidity": 35.7502750788,
+    "outside_temp": 2.3,
+    "outside_humidity": 98,
+    "winnd_speed": 10.8
+  },
+  {
+    "created_at": "2024-12-29T04:00:29+00:00",
+    "temp": 20.7123242188,
+    "humidity": 36.455921806,
+    "outside_temp": 1.9,
+    "outside_humidity": 94,
+    "winnd_speed": 11.5
+  },
+  {
+    "created_at": "2024-12-29T05:00:47+00:00",
+    "temp": 20.2995898438,
+    "humidity": 37.2690055868,
+    "outside_temp": 1.4,
+    "outside_humidity": 94,
+    "winnd_speed": 12.6
+  },
+  {
+    "created_at": "2024-12-29T06:00:05+00:00",
+    "temp": 19.9839453125,
+    "humidity": 37.4850442059,
+    "outside_temp": 0.8,
+    "outside_humidity": 92,
+    "winnd_speed": 15.8
+  },
+  {
+    "created_at": "2024-12-29T07:00:23+00:00",
+    "temp": 19.5394140625,
+    "humidity": 38.233872735,
+    "outside_temp": 0.3,
+    "outside_humidity": 99,
+    "winnd_speed": 16.2
+  },
+  {
+    "created_at": "2024-12-29T08:00:40+00:00",
+    "temp": 19.4918554688,
+    "humidity": 38.3049268681,
+    "outside_temp": 0.3,
+    "outside_humidity": 95,
+    "winnd_speed": 14.4
+  },
+  {
+    "created_at": "2024-12-29T09:00:57+00:00",
+    "temp": 19.9854882813,
+    "humidity": 38.5491328933,
+    "outside_temp": 0.9,
+    "outside_humidity": 95,
+    "winnd_speed": 14.8
+  },
+  {
+    "created_at": "2024-12-29T10:00:14+00:00",
+    "temp": 21.0982421875,
+    "humidity": 36.4728521794,
+    "outside_temp": 1.2,
+    "outside_humidity": 92,
+    "winnd_speed": 16.6
+  },
+  {
+    "created_at": "2024-12-29T11:00:32+00:00",
+    "temp": 21.9829101563,
+    "humidity": 35.2181617298,
+    "outside_temp": 1.4,
+    "outside_humidity": 91,
+    "winnd_speed": 18.4
+  },
+  {
+    "created_at": "2024-12-29T12:00:49+00:00",
+    "temp": 22.2630859375,
+    "humidity": 34.9206255309,
+    "outside_temp": 1.4,
+    "outside_humidity": 91,
+    "winnd_speed": 18.7
+  },
+  {
+    "created_at": "2024-12-29T13:00:06+00:00",
+    "temp": 21.6475390625,
+    "humidity": 36.2947506233,
+    "outside_temp": 1.2,
+    "outside_humidity": 93,
+    "winnd_speed": 18.4
+  },
+  {
+    "created_at": "2024-12-29T14:00:24+00:00",
+    "temp": 21.4821289063,
+    "humidity": 35.9760490208,
+    "outside_temp": 0.9,
+    "outside_humidity": 95,
+    "winnd_speed": 17.3
+  },
+  {
+    "created_at": "2024-12-29T15:00:41+00:00",
+    "temp": 21.3668164063,
+    "humidity": 37.710379066,
+    "outside_temp": 0.3,
+    "outside_humidity": 96,
+    "winnd_speed": 16.6
+  },
+  {
+    "created_at": "2024-12-29T16:00:58+00:00",
+    "temp": 20.9277539063,
+    "humidity": 38.9252496973,
+    "outside_temp": -0.2,
+    "outside_humidity": 97,
+    "winnd_speed": 14.8
+  },
+  {
+    "created_at": "2024-12-29T17:00:14+00:00",
+    "temp": 21.6677734375,
+    "humidity": 38.3376538279,
+    "outside_temp": -0.5,
+    "outside_humidity": 96,
+    "winnd_speed": 14.4
+  },
+  {
+    "created_at": "2024-12-29T18:00:31+00:00",
+    "temp": 22.9778125,
+    "humidity": 35.2488580283,
+    "outside_temp": -0.1,
+    "outside_humidity": 94,
+    "winnd_speed": 13.3
+  },
+  {
+    "created_at": "2024-12-29T19:00:48+00:00",
+    "temp": 24.4284570313,
+    "humidity": 35.7065071586,
+    "outside_temp": -0.1,
+    "outside_humidity": 97,
+    "winnd_speed": 14
+  },
+  {
+    "created_at": "2024-12-29T20:00:06+00:00",
+    "temp": 23.9550195313,
+    "humidity": 34.2541947468,
+    "outside_temp": 0.1,
+    "outside_humidity": 100,
+    "winnd_speed": 13.7
+  },
+  {
+    "created_at": "2024-12-29T21:00:25+00:00",
+    "temp": 23.7587695313,
+    "humidity": 35.4870435476,
+    "outside_temp": 0.2,
+    "outside_humidity": 100,
+    "winnd_speed": 13.3
+  },
+  {
+    "created_at": "2024-12-29T22:00:43+00:00",
+    "temp": 23.2681445313,
+    "humidity": 35.6507604901,
+    "outside_temp": 0.5,
+    "outside_humidity": 100,
+    "winnd_speed": 14.8
+  },
+  {
+    "created_at": "2024-12-30T00:00:17+00:00",
+    "temp": 22.0845703125,
+    "humidity": 35.7520054712,
+    "outside_temp": 0.8,
+    "outside_humidity": 100,
+    "winnd_speed": 17.6
+  },
+  {
+    "created_at": "2024-12-30T01:00:34+00:00",
+    "temp": 21.351640625,
+    "humidity": 35.4024202198,
+    "outside_temp": 0.9,
+    "outside_humidity": 100,
+    "winnd_speed": 20.2
+  },
+  {
+    "created_at": "2024-12-30T02:00:52+00:00",
+    "temp": 20.5282421875,
+    "humidity": 35.2259755014,
+    "outside_temp": 1,
+    "outside_humidity": 100,
+    "winnd_speed": 22.3
+  },
+  {
+    "created_at": "2024-12-30T03:00:09+00:00",
+    "temp": 19.9151953125,
+    "humidity": 34.9721383575,
+    "outside_temp": 0.9,
+    "outside_humidity": 100,
+    "winnd_speed": 23.8
+  },
+  {
+    "created_at": "2024-12-30T04:00:27+00:00",
+    "temp": 19.3036914063,
+    "humidity": 35.1275464697,
+    "outside_temp": 1,
+    "outside_humidity": 100,
+    "winnd_speed": 24.1
+  },
+  {
+    "created_at": "2024-12-30T05:00:44+00:00",
+    "temp": 18.7625,
+    "humidity": 35.317890366,
+    "outside_temp": 1,
+    "outside_humidity": 100,
+    "winnd_speed": 24.5
+  },
+  {
+    "created_at": "2024-12-30T06:00:02+00:00",
+    "temp": 18.3821484375,
+    "humidity": 35.9493283891,
+    "outside_temp": 1,
+    "outside_humidity": 100,
+    "winnd_speed": 27
+  },
+  {
+    "created_at": "2024-12-30T07:00:19+00:00",
+    "temp": 17.9588476563,
+    "humidity": 37.4328122777,
+    "outside_temp": 1.1,
+    "outside_humidity": 100,
+    "winnd_speed": 25.9
+  },
+  {
+    "created_at": "2024-12-30T08:00:37+00:00",
+    "temp": 18.392265625,
+    "humidity": 38.3228841071,
+    "outside_temp": 1.1,
+    "outside_humidity": 100,
+    "winnd_speed": 23.4
+  },
+  {
+    "created_at": "2024-12-30T09:00:56+00:00",
+    "temp": 20.221171875,
+    "humidity": 36.4055274665,
+    "outside_temp": 1.2,
+    "outside_humidity": 100,
+    "winnd_speed": 24.8
+  },
+  {
+    "created_at": "2024-12-30T10:00:13+00:00",
+    "temp": 21.9216992188,
+    "humidity": 35.5990344747,
+    "outside_temp": 1.3,
+    "outside_humidity": 100,
+    "winnd_speed": 25.9
+  },
+  {
+    "created_at": "2024-12-30T11:00:30+00:00",
+    "temp": 22.1346289063,
+    "humidity": 35.0777486614,
+    "outside_temp": 1.5,
+    "outside_humidity": 100,
+    "winnd_speed": 25.6
+  },
+  {
+    "created_at": "2024-12-30T12:00:48+00:00",
+    "temp": 21.8225390625,
+    "humidity": 34.978762182,
+    "outside_temp": 1.5,
+    "outside_humidity": 100,
+    "winnd_speed": 25.2
+  },
+  {
+    "created_at": "2024-12-30T13:00:05+00:00",
+    "temp": 21.4492773438,
+    "humidity": 36.0063783174,
+    "outside_temp": 1.6,
+    "outside_humidity": 100,
+    "winnd_speed": 24.8
+  },
+  {
+    "created_at": "2024-12-30T14:00:23+00:00",
+    "temp": 21.1711132813,
+    "humidity": 36.7707059601,
+    "outside_temp": 1.6,
+    "outside_humidity": 100,
+    "winnd_speed": 23.8
+  },
+  {
+    "created_at": "2024-12-30T15:00:40+00:00",
+    "temp": 21.9899414063,
+    "humidity": 34.8599538123,
+    "outside_temp": 1.6,
+    "outside_humidity": 100,
+    "winnd_speed": 24.5
+  },
+  {
+    "created_at": "2024-12-30T16:00:58+00:00",
+    "temp": 23.7011132813,
+    "humidity": 34.4359856282,
+    "outside_temp": 1.5,
+    "outside_humidity": 100,
+    "winnd_speed": 24.5
+  },
+  {
+    "created_at": "2024-12-30T17:00:16+00:00",
+    "temp": 23.3172070313,
+    "humidity": 36.1539662385,
+    "outside_temp": 1.5,
+    "outside_humidity": 100,
+    "winnd_speed": 24.1
+  },
+  {
+    "created_at": "2024-12-30T18:00:41+00:00",
+    "temp": 23.3880078125,
+    "humidity": 35.4823115641,
+    "outside_temp": 1.4,
+    "outside_humidity": 100,
+    "winnd_speed": 25.6
+  },
+  {
+    "created_at": "2024-12-30T19:00:59+00:00",
+    "temp": 24.2358007813,
+    "humidity": 33.173650884,
+    "outside_temp": 1.6,
+    "outside_humidity": 100,
+    "winnd_speed": 27.4
+  },
+  {
+    "created_at": "2024-12-30T20:00:17+00:00",
+    "temp": 23.9272070313,
+    "humidity": 33.5865680847,
+    "outside_temp": 1.6,
+    "outside_humidity": 100,
+    "winnd_speed": 26.6
+  },
+  {
+    "created_at": "2024-12-30T21:00:35+00:00",
+    "temp": 23.4588085938,
+    "humidity": 34.1363860409,
+    "outside_temp": 1.6,
+    "outside_humidity": 100,
+    "winnd_speed": 28.1
+  },
+  {
+    "created_at": "2024-12-30T22:00:53+00:00",
+    "temp": 22.9666601563,
+    "humidity": 33.8203519388,
+    "outside_temp": 1.5,
+    "outside_humidity": 100,
+    "winnd_speed": 29.9
+  },
+  {
+    "created_at": "2024-12-31T00:00:30+00:00",
+    "temp": 21.5565039063,
+    "humidity": 34.8421617192,
+    "outside_temp": 1,
+    "outside_humidity": 98,
+    "winnd_speed": 31.3
+  },
+  {
+    "created_at": "2024-12-31T01:00:47+00:00",
+    "temp": 22.2049023438,
+    "humidity": 33.990868917,
+    "outside_temp": 1,
+    "outside_humidity": 99,
+    "winnd_speed": 29.5
+  },
+  {
+    "created_at": "2024-12-31T02:00:04+00:00",
+    "temp": 24.173046875,
+    "humidity": 30.6846010276,
+    "outside_temp": 0.9,
+    "outside_humidity": 100,
+    "winnd_speed": 29.2
+  },
+  {
+    "created_at": "2024-12-31T03:00:21+00:00",
+    "temp": 24.30859375,
+    "humidity": 30.2928151253,
+    "outside_temp": 0.9,
+    "outside_humidity": 100,
+    "winnd_speed": 28.4
+  },
+  {
+    "created_at": "2024-12-31T04:00:39+00:00",
+    "temp": 23.7946679688,
+    "humidity": 30.5745180316,
+    "outside_temp": 1.1,
+    "outside_humidity": 100,
+    "winnd_speed": 27
+  },
+  {
+    "created_at": "2024-12-31T05:00:56+00:00",
+    "temp": 23.0865039063,
+    "humidity": 31.3624823472,
+    "outside_temp": 1.2,
+    "outside_humidity": 100,
+    "winnd_speed": 26.3
+  },
+  {
+    "created_at": "2024-12-31T06:00:13+00:00",
+    "temp": 22.44671875,
+    "humidity": 32.0739445862,
+    "outside_temp": 1.4,
+    "outside_humidity": 100,
+    "winnd_speed": 24.5
+  },
+  {
+    "created_at": "2024-12-31T07:00:31+00:00",
+    "temp": 21.8018164063,
+    "humidity": 32.7270943527,
+    "outside_temp": 1.6,
+    "outside_humidity": 100,
+    "winnd_speed": 24.1
+  },
+  {
+    "created_at": "2024-12-31T08:00:54+00:00",
+    "temp": 21.0769726563,
+    "humidity": 34.8692801635,
+    "outside_temp": 1.9,
+    "outside_humidity": 100,
+    "winnd_speed": 25.2
+  },
+  {
+    "created_at": "2024-12-31T09:00:10+00:00",
+    "temp": 22.1052734375,
+    "humidity": 35.2623307753,
+    "outside_temp": 2,
+    "outside_humidity": 100,
+    "winnd_speed": 25.2
+  },
+  {
+    "created_at": "2024-12-31T10:00:27+00:00",
+    "temp": 24.5468554688,
+    "humidity": 35.5965742365,
+    "outside_temp": 2.2,
+    "outside_humidity": 100,
+    "winnd_speed": 22.7
+  },
+  {
+    "created_at": "2024-12-31T11:00:45+00:00",
+    "temp": 25.1573828125,
+    "humidity": 33.5823912564,
+    "outside_temp": 2.4,
+    "outside_humidity": 100,
+    "winnd_speed": 22.3
+  },
+  {
+    "created_at": "2024-12-31T12:00:03+00:00",
+    "temp": 24.8573828125,
+    "humidity": 33.0991773907,
+    "outside_temp": 2.4,
+    "outside_humidity": 100,
+    "winnd_speed": 21.2
+  },
+  {
+    "created_at": "2024-12-31T13:00:21+00:00",
+    "temp": 24.2509179688,
+    "humidity": 32.2934598407,
+    "outside_temp": 2.4,
+    "outside_humidity": 100,
+    "winnd_speed": 19.4
+  },
+  {
+    "created_at": "2024-12-31T14:00:38+00:00",
+    "temp": 23.87359375,
+    "humidity": 35.1634841821,
+    "outside_temp": 2.2,
+    "outside_humidity": 100,
+    "winnd_speed": 19.1
+  },
+  {
+    "created_at": "2024-12-31T15:00:56+00:00",
+    "temp": 23.4411132813,
+    "humidity": 35.8814031178,
+    "outside_temp": 2.1,
+    "outside_humidity": 100,
+    "winnd_speed": 19.4
+  },
+  {
+    "created_at": "2024-12-31T16:00:14+00:00",
+    "temp": 23.8078320313,
+    "humidity": 38.1929535815,
+    "outside_temp": 2,
+    "outside_humidity": 100,
+    "winnd_speed": 16.6
+  },
+  {
+    "created_at": "2024-12-31T17:00:32+00:00",
+    "temp": 23.6070117188,
+    "humidity": 39.6322414652,
+    "outside_temp": 1.9,
+    "outside_humidity": 100,
+    "winnd_speed": 18
+  },
+  {
+    "created_at": "2024-12-31T18:00:50+00:00",
+    "temp": 23.4037109375,
+    "humidity": 39.1669226676,
+    "outside_temp": 2.1,
+    "outside_humidity": 100,
+    "winnd_speed": 23.4
+  },
+  {
+    "created_at": "2024-12-31T19:00:08+00:00",
+    "temp": 22.0445898438,
+    "humidity": 37.7632241754,
+    "outside_temp": 1.6,
+    "outside_humidity": 100,
+    "winnd_speed": 25.2
+  },
+  {
+    "created_at": "2024-12-31T20:00:27+00:00",
+    "temp": 22.3344140625,
+    "humidity": 36.8947989149,
+    "outside_temp": 1.4,
+    "outside_humidity": 99,
+    "winnd_speed": 23.8
+  },
+  {
+    "created_at": "2024-12-31T21:00:45+00:00",
+    "temp": 23.6459960938,
+    "humidity": 34.5493052541,
+    "outside_temp": 1.1,
+    "outside_humidity": 96,
+    "winnd_speed": 23.8
+  },
+  {
+    "created_at": "2024-12-31T22:00:03+00:00",
+    "temp": 25.119921875,
+    "humidity": 32.7322876205,
+    "outside_temp": 0.6,
+    "outside_humidity": 96,
+    "winnd_speed": 26.6
+  },
+  {
+    "created_at": "2025-01-01T00:00:39+00:00",
+    "temp": 24.7987304688,
+    "humidity": 30.6898187972,
+    "outside_temp": 0.4,
+    "outside_humidity": 97,
+    "winnd_speed": 30.2
+  },
+  {
+    "created_at": "2025-01-01T01:00:56+00:00",
+    "temp": 24.1108007813,
+    "humidity": 31.2258824628,
+    "outside_temp": 0.5,
+    "outside_humidity": 97,
+    "winnd_speed": 26.3
+  },
+  {
+    "created_at": "2025-01-01T02:00:14+00:00",
+    "temp": 22.8189648438,
+    "humidity": 31.8613368454,
+    "outside_temp": 0.4,
+    "outside_humidity": 99,
+    "winnd_speed": 27.7
+  },
+  {
+    "created_at": "2025-01-01T03:00:32+00:00",
+    "temp": 22.347578125,
+    "humidity": 31.3069799647,
+    "outside_temp": 0.5,
+    "outside_humidity": 99,
+    "winnd_speed": 30.2
+  },
+  {
+    "created_at": "2025-01-01T04:00:50+00:00",
+    "temp": 21.4963085938,
+    "humidity": 31.0645218605,
+    "outside_temp": 1,
+    "outside_humidity": 97,
+    "winnd_speed": 30.2
+  },
+  {
+    "created_at": "2025-01-01T05:00:07+00:00",
+    "temp": 21.2600976563,
+    "humidity": 29.9529486726,
+    "outside_temp": 1,
+    "outside_humidity": 95,
+    "winnd_speed": 31.7
+  },
+  {
+    "created_at": "2025-01-01T06:00:24+00:00",
+    "temp": 21.0754882813,
+    "humidity": 29.658381778,
+    "outside_temp": 1.1,
+    "outside_humidity": 95,
+    "winnd_speed": 31.3
+  },
+  {
+    "created_at": "2025-01-01T07:00:42+00:00",
+    "temp": 20.5838476563,
+    "humidity": 30.1023665527,
+    "outside_temp": 1,
+    "outside_humidity": 96,
+    "winnd_speed": 32.8
+  },
+  {
+    "created_at": "2025-01-01T08:00:59+00:00",
+    "temp": 19.1054296875,
+    "humidity": 31.1711185772,
+    "outside_temp": 0.9,
+    "outside_humidity": 96,
+    "winnd_speed": 33.1
+  },
+  {
+    "created_at": "2025-01-01T09:00:16+00:00",
+    "temp": 20.0977539063,
+    "humidity": 30.781311304,
+    "outside_temp": 0.8,
+    "outside_humidity": 96,
+    "winnd_speed": 32
+  },
+  {
+    "created_at": "2025-01-01T10:00:34+00:00",
+    "temp": 22.4274414063,
+    "humidity": 29.4626921608,
+    "outside_temp": 0.9,
+    "outside_humidity": 96,
+    "winnd_speed": 31.7
+  },
+  {
+    "created_at": "2025-01-01T11:00:52+00:00",
+    "temp": 23.3399609375,
+    "humidity": 30.6399663345,
+    "outside_temp": 1.2,
+    "outside_humidity": 95,
+    "winnd_speed": 32.8
+  },
+  {
+    "created_at": "2025-01-01T12:00:09+00:00",
+    "temp": 22.5094335938,
+    "humidity": 30.4425021117,
+    "outside_temp": 1.5,
+    "outside_humidity": 95,
+    "winnd_speed": 32.8
+  },
+  {
+    "created_at": "2025-01-01T13:00:27+00:00",
+    "temp": 22.3172265625,
+    "humidity": 33.5942557143,
+    "outside_temp": 2.2,
+    "outside_humidity": 96,
+    "winnd_speed": 32.4
+  },
+  {
+    "created_at": "2025-01-01T14:00:46+00:00",
+    "temp": 23.352109375,
+    "humidity": 31.4796129301,
+    "outside_temp": 2.7,
+    "outside_humidity": 95,
+    "winnd_speed": 37.4
+  },
+  {
+    "created_at": "2025-01-01T15:00:05+00:00",
+    "temp": 23.3055664063,
+    "humidity": 30.426356367,
+    "outside_temp": 2.8,
+    "outside_humidity": 94,
+    "winnd_speed": 34.6
+  },
+  {
+    "created_at": "2025-01-01T16:00:23+00:00",
+    "temp": 24.0824804688,
+    "humidity": 32.6140451629,
+    "outside_temp": 2.8,
+    "outside_humidity": 94,
+    "winnd_speed": 33.8
+  },
+  {
+    "created_at": "2025-01-01T17:00:40+00:00",
+    "temp": 23.0739453125,
+    "humidity": 32.5656526435,
+    "outside_temp": 2.7,
+    "outside_humidity": 93,
+    "winnd_speed": 34.2
+  },
+  {
+    "created_at": "2025-01-01T18:00:59+00:00",
+    "temp": 22.9160742188,
+    "humidity": 31.8771765075,
+    "outside_temp": 3,
+    "outside_humidity": 92,
+    "winnd_speed": 35.6
+  },
+  {
+    "created_at": "2025-01-01T19:00:16+00:00",
+    "temp": 22.3996484375,
+    "humidity": 31.368854603,
+    "outside_temp": 3,
+    "outside_humidity": 89,
+    "winnd_speed": 37.1
+  },
+  {
+    "created_at": "2025-01-01T20:00:33+00:00",
+    "temp": 21.9287304688,
+    "humidity": 31.7086365211,
+    "outside_temp": 3,
+    "outside_humidity": 90,
+    "winnd_speed": 36.4
+  },
+  {
+    "created_at": "2025-01-01T21:00:51+00:00",
+    "temp": 21.5403125,
+    "humidity": 31.8185920932,
+    "outside_temp": 3.4,
+    "outside_humidity": 88,
+    "winnd_speed": 38.5
+  },
+  {
+    "created_at": "2025-01-01T22:00:08+00:00",
+    "temp": 21.1240429688,
+    "humidity": 31.8531292779,
+    "outside_temp": 3.4,
+    "outside_humidity": 88,
+    "winnd_speed": 36
+  },
+  {
+    "created_at": "2025-01-02T00:00:43+00:00",
+    "temp": 22.7992773438,
+    "humidity": 28.1135577267,
+    "outside_temp": 3.8,
+    "outside_humidity": 90,
+    "winnd_speed": 36
+  },
+  {
+    "created_at": "2025-01-02T01:00:59+00:00",
+    "temp": 23.9166015625,
+    "humidity": 27.2743312724,
+    "outside_temp": 3.9,
+    "outside_humidity": 93,
+    "winnd_speed": 34.9
+  },
+  {
+    "created_at": "2025-01-02T02:00:17+00:00",
+    "temp": 23.7273828125,
+    "humidity": 27.1174395383,
+    "outside_temp": 4,
+    "outside_humidity": 94,
+    "winnd_speed": 36.4
+  },
+  {
+    "created_at": "2025-01-02T03:00:34+00:00",
+    "temp": 23.177578125,
+    "humidity": 27.6769832846,
+    "outside_temp": 4.4,
+    "outside_humidity": 94,
+    "winnd_speed": 37.4
+  },
+  {
+    "created_at": "2025-01-02T04:00:52+00:00",
+    "temp": 22.5817773438,
+    "humidity": 28.6441371427,
+    "outside_temp": 4.4,
+    "outside_humidity": 94,
+    "winnd_speed": 38.9
+  },
+  {
+    "created_at": "2025-01-02T05:00:10+00:00",
+    "temp": 21.942421875,
+    "humidity": 29.9688066301,
+    "outside_temp": 4.6,
+    "outside_humidity": 94,
+    "winnd_speed": 35.6
+  },
+  {
+    "created_at": "2025-01-02T06:00:28+00:00",
+    "temp": 21.3597460938,
+    "humidity": 30.7011728503,
+    "outside_temp": 5,
+    "outside_humidity": 92,
+    "winnd_speed": 37.1
+  },
+  {
+    "created_at": "2025-01-02T07:00:46+00:00",
+    "temp": 20.9348242188,
+    "humidity": 31.324938938,
+    "outside_temp": 4.8,
+    "outside_humidity": 93,
+    "winnd_speed": 36.4
+  },
+  {
+    "created_at": "2025-01-02T08:00:03+00:00",
+    "temp": 20.74515625,
+    "humidity": 34.4420481183,
+    "outside_temp": 4.8,
+    "outside_humidity": 92,
+    "winnd_speed": 34.9
+  },
+  {
+    "created_at": "2025-01-02T09:00:20+00:00",
+    "temp": 20.8756835938,
+    "humidity": 36.0278723514,
+    "outside_temp": 4.8,
+    "outside_humidity": 91,
+    "winnd_speed": 36
+  },
+  {
+    "created_at": "2025-01-02T10:00:38+00:00",
+    "temp": 19.8109765625,
+    "humidity": 35.9890431075,
+    "outside_temp": 3.5,
+    "outside_humidity": 90,
+    "winnd_speed": 34.6
+  },
+  {
+    "created_at": "2025-01-02T11:00:55+00:00",
+    "temp": 21.59140625,
+    "humidity": 32.9439174728,
+    "outside_temp": 3,
+    "outside_humidity": 88,
+    "winnd_speed": 30.6
+  },
+  {
+    "created_at": "2025-01-02T12:00:12+00:00",
+    "temp": 23.1467773438,
+    "humidity": 30.0554306705,
+    "outside_temp": 2.3,
+    "outside_humidity": 85,
+    "winnd_speed": 30.2
+  },
+  {
+    "created_at": "2025-01-02T13:00:30+00:00",
+    "temp": 23.9135546875,
+    "humidity": 29.5022707155,
+    "outside_temp": 1.8,
+    "outside_humidity": 86,
+    "winnd_speed": 31.3
+  },
+  {
+    "created_at": "2025-01-02T14:00:47+00:00",
+    "temp": 23.2276757813,
+    "humidity": 29.1396661583,
+    "outside_temp": 1.1,
+    "outside_humidity": 87,
+    "winnd_speed": 26.3
+  },
+  {
+    "created_at": "2025-01-02T15:00:03+00:00",
+    "temp": 22.6626953125,
+    "humidity": 28.9275114013,
+    "outside_temp": 0.4,
+    "outside_humidity": 92,
+    "winnd_speed": 20.9
+  },
+  {
+    "created_at": "2025-01-02T16:00:20+00:00",
+    "temp": 22.2039453125,
+    "humidity": 31.3760910043,
+    "outside_temp": -0.2,
+    "outside_humidity": 93,
+    "winnd_speed": 19.4
+  },
+  {
+    "created_at": "2025-01-02T17:00:38+00:00",
+    "temp": 21.4548046875,
+    "humidity": 30.9201360448,
+    "outside_temp": -0.2,
+    "outside_humidity": 92,
+    "winnd_speed": 26.6
+  },
+  {
+    "created_at": "2025-01-02T18:00:56+00:00",
+    "temp": 20.8423046875,
+    "humidity": 31.5161747457,
+    "outside_temp": -0.9,
+    "outside_humidity": 92,
+    "winnd_speed": 16.9
+  },
+  {
+    "created_at": "2025-01-02T19:00:13+00:00",
+    "temp": 22.7997851563,
+    "humidity": 30.45018444,
+    "outside_temp": -1.2,
+    "outside_humidity": 90,
+    "winnd_speed": 12.6
+  },
+  {
+    "created_at": "2025-01-02T20:00:30+00:00",
+    "temp": 24.0906054688,
+    "humidity": 29.2038333944,
+    "outside_temp": -0.9,
+    "outside_humidity": 91,
+    "winnd_speed": 16.6
+  },
+  {
+    "created_at": "2025-01-02T21:00:48+00:00",
+    "temp": 23.6070117188,
+    "humidity": 28.3542266318,
+    "outside_temp": -1.3,
+    "outside_humidity": 89,
+    "winnd_speed": 16.9
+  },
+  {
+    "created_at": "2025-01-02T22:00:05+00:00",
+    "temp": 22.86046875,
+    "humidity": 28.9258119753,
+    "outside_temp": -1.5,
+    "outside_humidity": 89,
+    "winnd_speed": 18.4
+  },
+  {
+    "created_at": "2025-01-03T00:00:40+00:00",
+    "temp": 21.2646679688,
+    "humidity": 28.4481851603,
+    "outside_temp": -2.2,
+    "outside_humidity": 89,
+    "winnd_speed": 18
+  },
+  {
+    "created_at": "2025-01-03T01:00:57+00:00",
+    "temp": 20.498359375,
+    "humidity": 29.14094806,
+    "outside_temp": -2.4,
+    "outside_humidity": 91,
+    "winnd_speed": 15.5
+  },
+  {
+    "created_at": "2025-01-03T02:00:18+00:00",
+    "temp": 19.7983398438,
+    "humidity": 29.6470745487,
+    "outside_temp": -2.5,
+    "outside_humidity": 93,
+    "winnd_speed": 17.3
+  },
+  {
+    "created_at": "2025-01-03T03:00:36+00:00",
+    "temp": 19.1018945313,
+    "humidity": 30.7470615006,
+    "outside_temp": -2,
+    "outside_humidity": 94,
+    "winnd_speed": 22.3
+  },
+  {
+    "created_at": "2025-01-03T04:00:55+00:00",
+    "temp": 18.45953125,
+    "humidity": 30.9851336312,
+    "outside_temp": -1.4,
+    "outside_humidity": 94,
+    "winnd_speed": 22
+  },
+  {
+    "created_at": "2025-01-03T05:00:13+00:00",
+    "temp": 17.9507226563,
+    "humidity": 31.5089698181,
+    "outside_temp": -0.9,
+    "outside_humidity": 94,
+    "winnd_speed": 20.9
+  },
+  {
+    "created_at": "2025-01-03T06:00:33+00:00",
+    "temp": 17.5466210938,
+    "humidity": 32.0571231996,
+    "outside_temp": -0.3,
+    "outside_humidity": 92,
+    "winnd_speed": 23.8
+  },
+  {
+    "created_at": "2025-01-03T07:00:52+00:00",
+    "temp": 17.3144726563,
+    "humidity": 32.4658775719,
+    "outside_temp": -0.3,
+    "outside_humidity": 94,
+    "winnd_speed": 21.2
+  },
+  {
+    "created_at": "2025-01-03T08:00:09+00:00",
+    "temp": 17.1414648438,
+    "humidity": 33.6302352275,
+    "outside_temp": -0.3,
+    "outside_humidity": 93,
+    "winnd_speed": 21.2
+  },
+  {
+    "created_at": "2025-01-03T09:00:27+00:00",
+    "temp": 17.150078125,
+    "humidity": 33.5013525843,
+    "outside_temp": -0.2,
+    "outside_humidity": 90,
+    "winnd_speed": 23
+  },
+  {
+    "created_at": "2025-01-03T10:00:44+00:00",
+    "temp": 18.5966015625,
+    "humidity": 32.0229424258,
+    "outside_temp": -0.2,
+    "outside_humidity": 89,
+    "winnd_speed": 23
+  },
+  {
+    "created_at": "2025-01-03T11:00:01+00:00",
+    "temp": 19.9334179688,
+    "humidity": 30.5437642253,
+    "outside_temp": 0.1,
+    "outside_humidity": 83,
+    "winnd_speed": 20.2
+  },
+  {
+    "created_at": "2025-01-03T12:00:18+00:00",
+    "temp": 20.0689648438,
+    "humidity": 30.0387294079,
+    "outside_temp": 0,
+    "outside_humidity": 93,
+    "winnd_speed": 19.8
+  },
+  {
+    "created_at": "2025-01-03T13:00:36+00:00",
+    "temp": 19.9789257813,
+    "humidity": 30.1659107258,
+    "outside_temp": -0.2,
+    "outside_humidity": 93,
+    "winnd_speed": 20.9
+  },
+  {
+    "created_at": "2025-01-03T14:00:53+00:00",
+    "temp": 19.6283789063,
+    "humidity": 30.6466259392,
+    "outside_temp": -0.1,
+    "outside_humidity": 90,
+    "winnd_speed": 28.1
+  },
+  {
+    "created_at": "2025-01-03T15:00:10+00:00",
+    "temp": 21.2701953125,
+    "humidity": 30.8625139716,
+    "outside_temp": -0.3,
+    "outside_humidity": 96,
+    "winnd_speed": 23.8
+  },
+  {
+    "created_at": "2025-01-03T16:00:27+00:00",
+    "temp": 22.059765625,
+    "humidity": 29.7996940421,
+    "outside_temp": -0.6,
+    "outside_humidity": 91,
+    "winnd_speed": 26.6
+  },
+  {
+    "created_at": "2025-01-03T17:00:45+00:00",
+    "temp": 21.5751953125,
+    "humidity": 29.7598969737,
+    "outside_temp": -0.6,
+    "outside_humidity": 91,
+    "winnd_speed": 32.8
+  },
+  {
+    "created_at": "2025-01-03T18:00:03+00:00",
+    "temp": 21.2742578125,
+    "humidity": 31.5637740092,
+    "outside_temp": -0.6,
+    "outside_humidity": 91,
+    "winnd_speed": 31.7
+  },
+  {
+    "created_at": "2025-01-03T19:00:20+00:00",
+    "temp": 22.9686914063,
+    "humidity": 30.4732231407,
+    "outside_temp": -0.9,
+    "outside_humidity": 85,
+    "winnd_speed": 30.2
+  },
+  {
+    "created_at": "2025-01-03T20:00:38+00:00",
+    "temp": 23.512421875,
+    "humidity": 29.282564042,
+    "outside_temp": -1.5,
+    "outside_humidity": 88,
+    "winnd_speed": 25.2
+  },
+  {
+    "created_at": "2025-01-03T21:00:55+00:00",
+    "temp": 23.0400195313,
+    "humidity": 28.9760553432,
+    "outside_temp": -2,
+    "outside_humidity": 85,
+    "winnd_speed": 26.6
+  },
+  {
+    "created_at": "2025-01-03T22:00:12+00:00",
+    "temp": 21.9292578125,
+    "humidity": 27.8426109964,
+    "outside_temp": -2.1,
+    "outside_humidity": 80,
+    "winnd_speed": 29.5
+  },
+  {
+    "created_at": "2025-01-04T00:00:46+00:00",
+    "temp": 20.586328125,
+    "humidity": 28.3271921976,
+    "outside_temp": -3,
+    "outside_humidity": 86,
+    "winnd_speed": 27.7
+  },
+  {
+    "created_at": "2025-01-04T01:00:09+00:00",
+    "temp": 20.02796875,
+    "humidity": 28.2872873355,
+    "outside_temp": -3.5,
+    "outside_humidity": 85,
+    "winnd_speed": 28.4
+  },
+  {
+    "created_at": "2025-01-04T02:00:27+00:00",
+    "temp": 19.3997851563,
+    "humidity": 28.8740173535,
+    "outside_temp": -3.5,
+    "outside_humidity": 90,
+    "winnd_speed": 28.1
+  },
+  {
+    "created_at": "2025-01-04T03:00:49+00:00",
+    "temp": 18.9111523438,
+    "humidity": 29.3463847025,
+    "outside_temp": -3.2,
+    "outside_humidity": 93,
+    "winnd_speed": 25.2
+  },
+  {
+    "created_at": "2025-01-04T04:00:11+00:00",
+    "temp": 18.4216015625,
+    "humidity": 29.5928733779,
+    "outside_temp": -2.8,
+    "outside_humidity": 89,
+    "winnd_speed": 29.5
+  },
+  {
+    "created_at": "2025-01-04T05:00:29+00:00",
+    "temp": 17.9127539063,
+    "humidity": 29.7897392686,
+    "outside_temp": -3,
+    "outside_humidity": 85,
+    "winnd_speed": 25.6
+  },
+  {
+    "created_at": "2025-01-04T06:00:47+00:00",
+    "temp": 17.4960351563,
+    "humidity": 30.5979211898,
+    "outside_temp": -4,
+    "outside_humidity": 83,
+    "winnd_speed": 21.6
+  },
+  {
+    "created_at": "2025-01-04T07:00:09+00:00",
+    "temp": 17.2472070313,
+    "humidity": 29.933574002,
+    "outside_temp": -4.2,
+    "outside_humidity": 81,
+    "winnd_speed": 20.2
+  },
+  {
+    "created_at": "2025-01-04T08:00:27+00:00",
+    "temp": 19.7634375,
+    "humidity": 28.8119523421,
+    "outside_temp": -4.4,
+    "outside_humidity": 83,
+    "winnd_speed": 19.1
+  },
+  {
+    "created_at": "2025-01-04T09:00:45+00:00",
+    "temp": 21.050703125,
+    "humidity": 27.8861930996,
+    "outside_temp": -4.1,
+    "outside_humidity": 85,
+    "winnd_speed": 19.1
+  },
+  {
+    "created_at": "2025-01-04T10:00:07+00:00",
+    "temp": 21.1518554688,
+    "humidity": 29.0050772623,
+    "outside_temp": -3.3,
+    "outside_humidity": 80,
+    "winnd_speed": 19.8
+  },
+  {
+    "created_at": "2025-01-04T11:00:25+00:00",
+    "temp": 20.5798046875,
+    "humidity": 27.2486300767,
+    "outside_temp": -2.7,
+    "outside_humidity": 78,
+    "winnd_speed": 19.8
+  },
+  {
+    "created_at": "2025-01-04T12:00:47+00:00",
+    "temp": 20.4558789063,
+    "humidity": 29.2150268139,
+    "outside_temp": -2.5,
+    "outside_humidity": 79,
+    "winnd_speed": 18
+  },
+  {
+    "created_at": "2025-01-04T13:00:09+00:00",
+    "temp": 20.1797070313,
+    "humidity": 29.7720245666,
+    "outside_temp": -2.5,
+    "outside_humidity": 83,
+    "winnd_speed": 16.6
+  },
+  {
+    "created_at": "2025-01-04T14:00:28+00:00",
+    "temp": 19.4316601563,
+    "humidity": 28.8337701094,
+    "outside_temp": -2.9,
+    "outside_humidity": 88,
+    "winnd_speed": 14
+  },
+  {
+    "created_at": "2025-01-04T15:00:45+00:00",
+    "temp": 20.4619335938,
+    "humidity": 30.3249529205,
+    "outside_temp": -3.8,
+    "outside_humidity": 90,
+    "winnd_speed": 13.3
+  },
+  {
+    "created_at": "2025-01-04T16:00:02+00:00",
+    "temp": 21.9231835938,
+    "humidity": 27.4683269866,
+    "outside_temp": -4.2,
+    "outside_humidity": 90,
+    "winnd_speed": 13.7
+  },
+  {
+    "created_at": "2025-01-04T17:00:19+00:00",
+    "temp": 21.9323046875,
+    "humidity": 26.8920084561,
+    "outside_temp": -4.4,
+    "outside_humidity": 89,
+    "winnd_speed": 14.4
+  },
+  {
+    "created_at": "2025-01-04T18:00:37+00:00",
+    "temp": 21.2919921875,
+    "humidity": 27.7321712635,
+    "outside_temp": -5.1,
+    "outside_humidity": 92,
+    "winnd_speed": 17.3
+  },
+  {
+    "created_at": "2025-01-04T19:00:55+00:00",
+    "temp": 20.7725195313,
+    "humidity": 28.2693940826,
+    "outside_temp": -4.8,
+    "outside_humidity": 92,
+    "winnd_speed": 17.6
+  },
+  {
+    "created_at": "2025-01-04T20:00:12+00:00",
+    "temp": 20.1958789063,
+    "humidity": 28.9534973266,
+    "outside_temp": -4.8,
+    "outside_humidity": 93,
+    "winnd_speed": 17.6
+  },
+  {
+    "created_at": "2025-01-04T21:00:29+00:00",
+    "temp": 21.6141796875,
+    "humidity": 26.7645669955,
+    "outside_temp": -5.1,
+    "outside_humidity": 92,
+    "winnd_speed": 15.8
+  },
+  {
+    "created_at": "2025-01-04T22:00:47+00:00",
+    "temp": 22.8290820313,
+    "humidity": 25.4498683309,
+    "outside_temp": -4.4,
+    "outside_humidity": 93,
+    "winnd_speed": 21.6
+  },
+  {
+    "created_at": "2025-01-05T00:00:20+00:00",
+    "temp": 21.5853125,
+    "humidity": 25.0254712259,
+    "outside_temp": -3.8,
+    "outside_humidity": 93,
+    "winnd_speed": 21.6
+  },
+  {
+    "created_at": "2025-01-05T01:00:37+00:00",
+    "temp": 20.97734375,
+    "humidity": 26.017397049,
+    "outside_temp": -3.7,
+    "outside_humidity": 92,
+    "winnd_speed": 22.7
+  },
+  {
+    "created_at": "2025-01-05T02:00:55+00:00",
+    "temp": 20.4462695313,
+    "humidity": 26.4741958932,
+    "outside_temp": -3.7,
+    "outside_humidity": 92,
+    "winnd_speed": 22
+  },
+  {
+    "created_at": "2025-01-05T03:00:12+00:00",
+    "temp": 19.875234375,
+    "humidity": 26.7764736948,
+    "outside_temp": -3.5,
+    "outside_humidity": 92,
+    "winnd_speed": 20.2
+  },
+  {
+    "created_at": "2025-01-05T04:00:29+00:00",
+    "temp": 19.1483984375,
+    "humidity": 26.3655429101,
+    "outside_temp": -3.4,
+    "outside_humidity": 93,
+    "winnd_speed": 19.8
+  },
+  {
+    "created_at": "2025-01-05T05:00:52+00:00",
+    "temp": 18.5546289063,
+    "humidity": 26.9779919033,
+    "outside_temp": -3.2,
+    "outside_humidity": 92,
+    "winnd_speed": 21.2
+  },
+  {
+    "created_at": "2025-01-05T06:00:09+00:00",
+    "temp": 18.2061328125,
+    "humidity": 27.7241972635,
+    "outside_temp": -3.5,
+    "outside_humidity": 93,
+    "winnd_speed": 15.1
+  },
+  {
+    "created_at": "2025-01-05T07:00:26+00:00",
+    "temp": 17.7271679688,
+    "humidity": 28.1133974562,
+    "outside_temp": -3.7,
+    "outside_humidity": 95,
+    "winnd_speed": 18.7
+  },
+  {
+    "created_at": "2025-01-05T08:00:43+00:00",
+    "temp": 18.577890625,
+    "humidity": 30.1583377787,
+    "outside_temp": -3.3,
+    "outside_humidity": 94,
+    "winnd_speed": 19.1
+  },
+  {
+    "created_at": "2025-01-05T09:01:01+00:00",
+    "temp": 19.9920898438,
+    "humidity": 28.5790864759,
+    "outside_temp": -3.2,
+    "outside_humidity": 93,
+    "winnd_speed": 18.7
+  },
+  {
+    "created_at": "2025-01-05T10:00:19+00:00",
+    "temp": 21.5251367188,
+    "humidity": 28.1167521351,
+    "outside_temp": -2.8,
+    "outside_humidity": 92,
+    "winnd_speed": 15.5
+  },
+  {
+    "created_at": "2025-01-05T11:00:37+00:00",
+    "temp": 21.7350390625,
+    "humidity": 28.3963108468,
+    "outside_temp": -2.2,
+    "outside_humidity": 90,
+    "winnd_speed": 13
+  },
+  {
+    "created_at": "2025-01-05T12:00:55+00:00",
+    "temp": 21.23078125,
+    "humidity": 28.1880021166,
+    "outside_temp": -1.9,
+    "outside_humidity": 88,
+    "winnd_speed": 13
+  },
+  {
+    "created_at": "2025-01-05T13:00:12+00:00",
+    "temp": 20.8220898438,
+    "humidity": 29.7785909502,
+    "outside_temp": -1.7,
+    "outside_humidity": 85,
+    "winnd_speed": 11.2
+  },
+  {
+    "created_at": "2025-01-05T14:00:29+00:00",
+    "temp": 21.3920703125,
+    "humidity": 29.255624927,
+    "outside_temp": -2.1,
+    "outside_humidity": 88,
+    "winnd_speed": 10.8
+  },
+  {
+    "created_at": "2025-01-05T15:00:48+00:00",
+    "temp": 23.6303125,
+    "humidity": 27.085802999,
+    "outside_temp": -2.9,
+    "outside_humidity": 91,
+    "winnd_speed": 8.6
+  },
+  {
+    "created_at": "2025-01-05T16:00:05+00:00",
+    "temp": 24.6899804688,
+    "humidity": 27.8612078969,
+    "outside_temp": -3.4,
+    "outside_humidity": 93,
+    "winnd_speed": 10.4
+  },
+  {
+    "created_at": "2025-01-05T17:00:22+00:00",
+    "temp": 24.1917382813,
+    "humidity": 27.5803271891,
+    "outside_temp": -3.5,
+    "outside_humidity": 93,
+    "winnd_speed": 13
+  },
+  {
+    "created_at": "2025-01-05T18:00:40+00:00",
+    "temp": 23.5721484375,
+    "humidity": 26.7643184384,
+    "outside_temp": -3.5,
+    "outside_humidity": 93,
+    "winnd_speed": 12.6
+  },
+  {
+    "created_at": "2025-01-05T19:00:57+00:00",
+    "temp": 22.8857617188,
+    "humidity": 28.2140707156,
+    "outside_temp": -3.8,
+    "outside_humidity": 90,
+    "winnd_speed": 12.2
+  },
+  {
+    "created_at": "2025-01-05T20:00:14+00:00",
+    "temp": 21.9034570313,
+    "humidity": 30.2862201096,
+    "outside_temp": -3.7,
+    "outside_humidity": 89,
+    "winnd_speed": 14
+  },
+  {
+    "created_at": "2025-01-05T21:00:31+00:00",
+    "temp": 21.1007421875,
+    "humidity": 28.1871371178,
+    "outside_temp": -3.7,
+    "outside_humidity": 87,
+    "winnd_speed": 15.5
+  },
+  {
+    "created_at": "2025-01-05T22:00:49+00:00",
+    "temp": 20.6824804688,
+    "humidity": 28.562168774,
+    "outside_temp": -3.6,
+    "outside_humidity": 86,
+    "winnd_speed": 18
+  },
+  {
+    "created_at": "2025-01-06T00:00:23+00:00",
+    "temp": 23.710234375,
+    "humidity": 25.4958000611,
+    "outside_temp": -3.5,
+    "outside_humidity": 90,
+    "winnd_speed": 18.4
+  },
+  {
+    "created_at": "2025-01-06T01:00:40+00:00",
+    "temp": 23.7733984375,
+    "humidity": 25.2701818071,
+    "outside_temp": -3.3,
+    "outside_humidity": 90,
+    "winnd_speed": 19.1
+  },
+  {
+    "created_at": "2025-01-06T02:00:58+00:00",
+    "temp": 23.1568554688,
+    "humidity": 25.4555787709,
+    "outside_temp": -3.3,
+    "outside_humidity": 91,
+    "winnd_speed": 21.2
+  },
+  {
+    "created_at": "2025-01-06T03:00:19+00:00",
+    "temp": 22.3217578125,
+    "humidity": 26.0050969541,
+    "outside_temp": -3.3,
+    "outside_humidity": 92,
+    "winnd_speed": 22.7
+  },
+  {
+    "created_at": "2025-01-06T04:00:37+00:00",
+    "temp": 21.6981445313,
+    "humidity": 25.0862690163,
+    "outside_temp": -3.3,
+    "outside_humidity": 93,
+    "winnd_speed": 22.3
+  },
+  {
+    "created_at": "2025-01-06T05:00:54+00:00",
+    "temp": 20.8584765625,
+    "humidity": 25.1374843841,
+    "outside_temp": -3.2,
+    "outside_humidity": 93,
+    "winnd_speed": 20.5
+  },
+  {
+    "created_at": "2025-01-06T06:00:11+00:00",
+    "temp": 20.0567773438,
+    "humidity": 24.6626949223,
+    "outside_temp": -2.9,
+    "outside_humidity": 95,
+    "winnd_speed": 21.6
+  },
+  {
+    "created_at": "2025-01-06T07:00:29+00:00",
+    "temp": 19.42046875,
+    "humidity": 25.5731969829,
+    "outside_temp": -2.5,
+    "outside_humidity": 95,
+    "winnd_speed": 22.7
+  },
+  {
+    "created_at": "2025-01-06T08:00:47+00:00",
+    "temp": 18.9051367188,
+    "humidity": 27.8742052798,
+    "outside_temp": -2.1,
+    "outside_humidity": 97,
+    "winnd_speed": 21.6
+  },
+  {
+    "created_at": "2025-01-06T09:00:03+00:00",
+    "temp": 19.3492382813,
+    "humidity": 31.203725932,
+    "outside_temp": -1.8,
+    "outside_humidity": 99,
+    "winnd_speed": 20.2
+  },
+  {
+    "created_at": "2025-01-06T10:00:20+00:00",
+    "temp": 20.199453125,
+    "humidity": 30.4129727996,
+    "outside_temp": -1.3,
+    "outside_humidity": 99,
+    "winnd_speed": 19.1
+  },
+  {
+    "created_at": "2025-01-06T11:00:37+00:00",
+    "temp": 22.14828125,
+    "humidity": 29.1121627559,
+    "outside_temp": -0.8,
+    "outside_humidity": 100,
+    "winnd_speed": 19.4
+  },
+  {
+    "created_at": "2025-01-06T12:00:55+00:00",
+    "temp": 22.8397265625,
+    "humidity": 29.421949107,
+    "outside_temp": 0.3,
+    "outside_humidity": 99,
+    "winnd_speed": 17.6
+  },
+  {
+    "created_at": "2025-01-06T13:00:17+00:00",
+    "temp": 22.5787304688,
+    "humidity": 29.3682312482,
+    "outside_temp": 0.9,
+    "outside_humidity": 99,
+    "winnd_speed": 16.9
+  },
+  {
+    "created_at": "2025-01-06T14:00:35+00:00",
+    "temp": 23.0293945313,
+    "humidity": 31.7827104417,
+    "outside_temp": 1.3,
+    "outside_humidity": 98,
+    "winnd_speed": 15.1
+  },
+  {
+    "created_at": "2025-01-06T15:00:52+00:00",
+    "temp": 22.2863671875,
+    "humidity": 33.4760784624,
+    "outside_temp": 1.3,
+    "outside_humidity": 98,
+    "winnd_speed": 13.7
+  },
+  {
+    "created_at": "2025-01-06T16:00:10+00:00",
+    "temp": 21.9125390625,
+    "humidity": 33.3622240815,
+    "outside_temp": 1.7,
+    "outside_humidity": 97,
+    "winnd_speed": 16.6
+  },
+  {
+    "created_at": "2025-01-06T17:00:27+00:00",
+    "temp": 23.3991601563,
+    "humidity": 31.5567817987,
+    "outside_temp": 2,
+    "outside_humidity": 96,
+    "winnd_speed": 14.4
+  },
+  {
+    "created_at": "2025-01-06T18:00:50+00:00",
+    "temp": 24.9150585938,
+    "humidity": 30.2005204248,
+    "outside_temp": 2,
+    "outside_humidity": 96,
+    "winnd_speed": 16.6
+  },
+  {
+    "created_at": "2025-01-06T19:00:12+00:00",
+    "temp": 25.2134960938,
+    "humidity": 29.6330236823,
+    "outside_temp": 2.3,
+    "outside_humidity": 96,
+    "winnd_speed": 19.1
+  },
+  {
+    "created_at": "2025-01-06T20:00:29+00:00",
+    "temp": 24.736015625,
+    "humidity": 30.1507545974,
+    "outside_temp": 2.3,
+    "outside_humidity": 97,
+    "winnd_speed": 19.4
+  },
+  {
+    "created_at": "2025-01-06T21:00:51+00:00",
+    "temp": 24.2236328125,
+    "humidity": 30.6353042396,
+    "outside_temp": 2.3,
+    "outside_humidity": 97,
+    "winnd_speed": 19.1
+  },
+  {
+    "created_at": "2025-01-06T22:00:12+00:00",
+    "temp": 23.4871679688,
+    "humidity": 30.416030499,
+    "outside_temp": 2.4,
+    "outside_humidity": 96,
+    "winnd_speed": 18.4
+  },
+  {
+    "created_at": "2025-01-07T00:00:48+00:00",
+    "temp": 22.3865039063,
+    "humidity": 31.7613792921,
+    "outside_temp": 2.3,
+    "outside_humidity": 95,
+    "winnd_speed": 19.8
+  },
+  {
+    "created_at": "2025-01-07T01:00:06+00:00",
+    "temp": 21.8968945313,
+    "humidity": 32.7364741015,
+    "outside_temp": 2.1,
+    "outside_humidity": 94,
+    "winnd_speed": 19.4
+  },
+  {
+    "created_at": "2025-01-07T02:00:25+00:00",
+    "temp": 21.4426953125,
+    "humidity": 32.885058545,
+    "outside_temp": 2.2,
+    "outside_humidity": 92,
+    "winnd_speed": 18.7
+  },
+  {
+    "created_at": "2025-01-07T03:00:48+00:00",
+    "temp": 21.0658789063,
+    "humidity": 33.4473409673,
+    "outside_temp": 2.1,
+    "outside_humidity": 92,
+    "winnd_speed": 15.1
+  },
+  {
+    "created_at": "2025-01-07T04:00:06+00:00",
+    "temp": 20.7623828125,
+    "humidity": 33.5819986847,
+    "outside_temp": 1.5,
+    "outside_humidity": 95,
+    "winnd_speed": 12.6
+  },
+  {
+    "created_at": "2025-01-07T05:00:24+00:00",
+    "temp": 20.3562304688,
+    "humidity": 34.0148927911,
+    "outside_temp": 1.3,
+    "outside_humidity": 97,
+    "winnd_speed": 10.1
+  },
+  {
+    "created_at": "2025-01-07T06:00:43+00:00",
+    "temp": 20.0451757813,
+    "humidity": 34.2500441776,
+    "outside_temp": 1.4,
+    "outside_humidity": 97,
+    "winnd_speed": 10.8
+  },
+  {
+    "created_at": "2025-01-07T07:00:01+00:00",
+    "temp": 19.7675,
+    "humidity": 34.4134958128,
+    "outside_temp": 2.3,
+    "outside_humidity": 97,
+    "winnd_speed": 13.7
+  },
+  {
+    "created_at": "2025-01-07T08:00:19+00:00",
+    "temp": 19.7007226563,
+    "humidity": 35.4590233177,
+    "outside_temp": 2.7,
+    "outside_humidity": 98,
+    "winnd_speed": 13
+  },
+  {
+    "created_at": "2025-01-07T09:00:35+00:00",
+    "temp": 21.1184960938,
+    "humidity": 33.665363065,
+    "outside_temp": 2.5,
+    "outside_humidity": 99,
+    "winnd_speed": 12.2
+  },
+  {
+    "created_at": "2025-01-07T10:00:52+00:00",
+    "temp": 23.1007226563,
+    "humidity": 31.3784817161,
+    "outside_temp": 2.8,
+    "outside_humidity": 100,
+    "winnd_speed": 17.3
+  },
+  {
+    "created_at": "2025-01-07T11:00:09+00:00",
+    "temp": 23.6409179688,
+    "humidity": 30.9087111952,
+    "outside_temp": 3.3,
+    "outside_humidity": 100,
+    "winnd_speed": 16.9
+  },
+  {
+    "created_at": "2025-01-07T12:00:26+00:00",
+    "temp": 23.6191601563,
+    "humidity": 31.2020593913,
+    "outside_temp": 3.5,
+    "outside_humidity": 98,
+    "winnd_speed": 14.8
+  },
+  {
+    "created_at": "2025-01-07T13:00:43+00:00",
+    "temp": 23.2423632813,
+    "humidity": 31.4950112159,
+    "outside_temp": 3.2,
+    "outside_humidity": 98,
+    "winnd_speed": 14.8
+  },
+  {
+    "created_at": "2025-01-07T14:01:00+00:00",
+    "temp": 22.7931640625,
+    "humidity": 32.3855640801,
+    "outside_temp": 3.1,
+    "outside_humidity": 98,
+    "winnd_speed": 16.6
+  },
+  {
+    "created_at": "2025-01-07T15:00:22+00:00",
+    "temp": 22.2711523438,
+    "humidity": 32.3927233977,
+    "outside_temp": 3,
+    "outside_humidity": 97,
+    "winnd_speed": 16.9
+  },
+  {
+    "created_at": "2025-01-07T16:00:39+00:00",
+    "temp": 21.795234375,
+    "humidity": 32.4779551413,
+    "outside_temp": 2.9,
+    "outside_humidity": 96,
+    "winnd_speed": 15.8
+  },
+  {
+    "created_at": "2025-01-07T17:00:56+00:00",
+    "temp": 21.2054492188,
+    "humidity": 33.322416676,
+    "outside_temp": 2.8,
+    "outside_humidity": 96,
+    "winnd_speed": 15.5
+  },
+  {
+    "created_at": "2025-01-07T18:00:14+00:00",
+    "temp": 20.7896875,
+    "humidity": 33.9088540892,
+    "outside_temp": 2.5,
+    "outside_humidity": 98,
+    "winnd_speed": 15.8
+  },
+  {
+    "created_at": "2025-01-07T19:00:32+00:00",
+    "temp": 21.1685742188,
+    "humidity": 34.6554873561,
+    "outside_temp": 2.5,
+    "outside_humidity": 98,
+    "winnd_speed": 13.7
+  },
+  {
+    "created_at": "2025-01-07T20:00:55+00:00",
+    "temp": 22.8412304688,
+    "humidity": 32.0082994781,
+    "outside_temp": 2.5,
+    "outside_humidity": 98,
+    "winnd_speed": 15.8
+  },
+  {
+    "created_at": "2025-01-07T21:00:13+00:00",
+    "temp": 23.3404296875,
+    "humidity": 31.0225001299,
+    "outside_temp": 3,
+    "outside_humidity": 96,
+    "winnd_speed": 26.6
+  },
+  {
+    "created_at": "2025-01-07T22:00:31+00:00",
+    "temp": 23.4213867188,
+    "humidity": 31.6360057618,
+    "outside_temp": 1.2,
+    "outside_humidity": 97,
+    "winnd_speed": 14
+  },
+  {
+    "created_at": "2025-01-08T00:00:15+00:00",
+    "temp": 22.00109375,
+    "humidity": 31.0932165579,
+    "outside_temp": 2.2,
+    "outside_humidity": 94,
+    "winnd_speed": 25.2
+  },
+  {
+    "created_at": "2025-01-08T01:00:32+00:00",
+    "temp": 21.0162890625,
+    "humidity": 30.9663387607,
+    "outside_temp": 1.4,
+    "outside_humidity": 97,
+    "winnd_speed": 29.5
+  },
+  {
+    "created_at": "2025-01-08T02:00:50+00:00",
+    "temp": 20.284921875,
+    "humidity": 30.9618868661,
+    "outside_temp": 1.2,
+    "outside_humidity": 88,
+    "winnd_speed": 30.6
+  },
+  {
+    "created_at": "2025-01-08T03:00:09+00:00",
+    "temp": 19.753828125,
+    "humidity": 31.2671008024,
+    "outside_temp": 0.4,
+    "outside_humidity": 87,
+    "winnd_speed": 25.9
+  },
+  {
+    "created_at": "2025-01-08T04:00:28+00:00",
+    "temp": 19.4736328125,
+    "humidity": 32.2703309725,
+    "outside_temp": 0.1,
+    "outside_humidity": 94,
+    "winnd_speed": 15.1
+  },
+  {
+    "created_at": "2025-01-08T05:00:52+00:00",
+    "temp": 18.9521679688,
+    "humidity": 32.0005957775,
+    "outside_temp": 0,
+    "outside_humidity": 95,
+    "winnd_speed": 17.6
+  },
+  {
+    "created_at": "2025-01-08T06:00:10+00:00",
+    "temp": 18.40640625,
+    "humidity": 32.3234099756,
+    "outside_temp": 0.1,
+    "outside_humidity": 97,
+    "winnd_speed": 18.4
+  },
+  {
+    "created_at": "2025-01-08T07:00:29+00:00",
+    "temp": 17.5167578125,
+    "humidity": 32.9879129095,
+    "outside_temp": 0.2,
+    "outside_humidity": 96,
+    "winnd_speed": 22.7
+  },
+  {
+    "created_at": "2025-01-08T08:00:48+00:00",
+    "temp": 18.6334960938,
+    "humidity": 32.4114335533,
+    "outside_temp": 0.2,
+    "outside_humidity": 97,
+    "winnd_speed": 24.5
+  },
+  {
+    "created_at": "2025-01-08T09:00:04+00:00",
+    "temp": 19.9333789063,
+    "humidity": 30.8499240035,
+    "outside_temp": 0.1,
+    "outside_humidity": 97,
+    "winnd_speed": 23.8
+  },
+  {
+    "created_at": "2025-01-08T10:00:21+00:00",
+    "temp": 21.3511328125,
+    "humidity": 29.6453945451,
+    "outside_temp": 0.6,
+    "outside_humidity": 93,
+    "winnd_speed": 26.6
+  },
+  {
+    "created_at": "2025-01-08T11:00:38+00:00",
+    "temp": 21.7805859375,
+    "humidity": 29.0699041051,
+    "outside_temp": 1,
+    "outside_humidity": 92,
+    "winnd_speed": 19.8
+  },
+  {
+    "created_at": "2025-01-08T12:00:55+00:00",
+    "temp": 21.652109375,
+    "humidity": 29.9338151255,
+    "outside_temp": 1.2,
+    "outside_humidity": 92,
+    "winnd_speed": 21.2
+  },
+  {
+    "created_at": "2025-01-08T13:00:16+00:00",
+    "temp": 20.9829296875,
+    "humidity": 29.8998101107,
+    "outside_temp": 1.3,
+    "outside_humidity": 92,
+    "winnd_speed": 20.5
+  },
+  {
+    "created_at": "2025-01-08T14:00:34+00:00",
+    "temp": 20.3718945313,
+    "humidity": 30.1349470592,
+    "outside_temp": 1.2,
+    "outside_humidity": 93,
+    "winnd_speed": 14.4
+  },
+  {
+    "created_at": "2025-01-08T15:00:50+00:00",
+    "temp": 19.68,
+    "humidity": 30.9256064516,
+    "outside_temp": 0.6,
+    "outside_humidity": 95,
+    "winnd_speed": 13.3
+  },
+  {
+    "created_at": "2025-01-08T16:00:07+00:00",
+    "temp": 19.160546875,
+    "humidity": 31.2990760106,
+    "outside_temp": 0.2,
+    "outside_humidity": 93,
+    "winnd_speed": 17.3
+  },
+  {
+    "created_at": "2025-01-08T17:00:24+00:00",
+    "temp": 18.6921875,
+    "humidity": 31.6097127744,
+    "outside_temp": 0.3,
+    "outside_humidity": 93,
+    "winnd_speed": 19.1
+  },
+  {
+    "created_at": "2025-01-08T18:00:43+00:00",
+    "temp": 19.6723828125,
+    "humidity": 31.5415963635,
+    "outside_temp": 0.3,
+    "outside_humidity": 95,
+    "winnd_speed": 20.2
+  },
+  {
+    "created_at": "2025-01-08T19:01:01+00:00",
+    "temp": 21.7310351563,
+    "humidity": 30.3934959138,
+    "outside_temp": 0.6,
+    "outside_humidity": 94,
+    "winnd_speed": 20.2
+  },
+  {
+    "created_at": "2025-01-08T20:00:18+00:00",
+    "temp": 22.3677929688,
+    "humidity": 30.0357223813,
+    "outside_temp": 0.2,
+    "outside_humidity": 96,
+    "winnd_speed": 19.8
+  },
+  {
+    "created_at": "2025-01-08T21:00:35+00:00",
+    "temp": 22.3359375,
+    "humidity": 30.2279072731,
+    "outside_temp": 0.8,
+    "outside_humidity": 93,
+    "winnd_speed": 22
+  },
+  {
+    "created_at": "2025-01-08T22:00:52+00:00",
+    "temp": 21.6171875,
+    "humidity": 30.098322564,
+    "outside_temp": 0.9,
+    "outside_humidity": 89,
+    "winnd_speed": 21.2
+  },
+  {
+    "created_at": "2025-01-09T00:00:27+00:00",
+    "temp": 20.4634570313,
+    "humidity": 31.5373991643,
+    "outside_temp": 0.6,
+    "outside_humidity": 89,
+    "winnd_speed": 17.6
+  },
+  {
+    "created_at": "2025-01-09T01:00:47+00:00",
+    "temp": 19.8468945313,
+    "humidity": 31.9958118541,
+    "outside_temp": 0.2,
+    "outside_humidity": 93,
+    "winnd_speed": 11.9
+  },
+  {
+    "created_at": "2025-01-09T02:00:04+00:00",
+    "temp": 19.32796875,
+    "humidity": 32.684841128,
+    "outside_temp": -0.8,
+    "outside_humidity": 97,
+    "winnd_speed": 12.2
+  },
+  {
+    "created_at": "2025-01-09T03:00:21+00:00",
+    "temp": 18.8459375,
+    "humidity": 33.2227754504,
+    "outside_temp": -1.2,
+    "outside_humidity": 99,
+    "winnd_speed": 14.4
+  },
+  {
+    "created_at": "2025-01-09T04:00:41+00:00",
+    "temp": 18.50453125,
+    "humidity": 33.709753521,
+    "outside_temp": -1.2,
+    "outside_humidity": 98,
+    "winnd_speed": 10.1
+  },
+  {
+    "created_at": "2025-01-09T05:01:01+00:00",
+    "temp": 18.2096679688,
+    "humidity": 32.7169191287,
+    "outside_temp": -1,
+    "outside_humidity": 97,
+    "winnd_speed": 11.5
+  },
+  {
+    "created_at": "2025-01-09T06:00:19+00:00",
+    "temp": 18.7665625,
+    "humidity": 31.6457450307,
+    "outside_temp": -0.8,
+    "outside_humidity": 97,
+    "winnd_speed": 12.6
+  },
+  {
+    "created_at": "2025-01-09T07:00:37+00:00",
+    "temp": 19.9415039063,
+    "humidity": 30.4711685926,
+    "outside_temp": -0.4,
+    "outside_humidity": 96,
+    "winnd_speed": 13.7
+  },
+  {
+    "created_at": "2025-01-09T08:00:55+00:00",
+    "temp": 21.0477148438,
+    "humidity": 29.9336220707,
+    "outside_temp": -0.2,
+    "outside_humidity": 97,
+    "winnd_speed": 15.5
+  },
+  {
+    "created_at": "2025-01-09T09:00:12+00:00",
+    "temp": 21.545859375,
+    "humidity": 29.2378054916,
+    "outside_temp": 0.1,
+    "outside_humidity": 97,
+    "winnd_speed": 13.3
+  },
+  {
+    "created_at": "2025-01-09T10:00:29+00:00",
+    "temp": 21.4598828125,
+    "humidity": 29.2089513434,
+    "outside_temp": 0.1,
+    "outside_humidity": 96,
+    "winnd_speed": 18.4
+  },
+  {
+    "created_at": "2025-01-09T11:00:47+00:00",
+    "temp": 21.1118945313,
+    "humidity": 30.3249178921,
+    "outside_temp": 0.2,
+    "outside_humidity": 97,
+    "winnd_speed": 15.1
+  },
+  {
+    "created_at": "2025-01-09T12:00:03+00:00",
+    "temp": 20.7679492188,
+    "humidity": 32.5768791845,
+    "outside_temp": 0.3,
+    "outside_humidity": 100,
+    "winnd_speed": 14
+  },
+  {
+    "created_at": "2025-01-09T13:00:21+00:00",
+    "temp": 20.2465429688,
+    "humidity": 32.3111676004,
+    "outside_temp": 0.7,
+    "outside_humidity": 100,
+    "winnd_speed": 12.2
+  },
+  {
+    "created_at": "2025-01-09T14:00:38+00:00",
+    "temp": 19.6142382813,
+    "humidity": 32.5147328647,
+    "outside_temp": 1,
+    "outside_humidity": 100,
+    "winnd_speed": 9.7
+  },
+  {
+    "created_at": "2025-01-09T15:01:00+00:00",
+    "temp": 20.442734375,
+    "humidity": 31.7995891697,
+    "outside_temp": 1.5,
+    "outside_humidity": 100,
+    "winnd_speed": 15.1
+  },
+  {
+    "created_at": "2025-01-09T16:00:17+00:00",
+    "temp": 22.466953125,
+    "humidity": 29.8232132862,
+    "outside_temp": 2,
+    "outside_humidity": 100,
+    "winnd_speed": 10.8
+  },
+  {
+    "created_at": "2025-01-09T17:00:34+00:00",
+    "temp": 23.0086132813,
+    "humidity": 29.3565145937,
+    "outside_temp": 1.9,
+    "outside_humidity": 100,
+    "winnd_speed": 13
+  },
+  {
+    "created_at": "2025-01-09T18:00:52+00:00",
+    "temp": 22.5008398438,
+    "humidity": 30.2095724002,
+    "outside_temp": 2.3,
+    "outside_humidity": 100,
+    "winnd_speed": 12.6
+  },
+  {
+    "created_at": "2025-01-09T19:00:09+00:00",
+    "temp": 22.0299023438,
+    "humidity": 31.0624125628,
+    "outside_temp": 2.7,
+    "outside_humidity": 100,
+    "winnd_speed": 16.6
+  },
+  {
+    "created_at": "2025-01-09T20:00:26+00:00",
+    "temp": 23.0764648438,
+    "humidity": 31.3352062632,
+    "outside_temp": 3.3,
+    "outside_humidity": 99,
+    "winnd_speed": 20.2
+  },
+  {
+    "created_at": "2025-01-09T21:00:50+00:00",
+    "temp": 24.535703125,
+    "humidity": 29.6489361981,
+    "outside_temp": 3.8,
+    "outside_humidity": 98,
+    "winnd_speed": 18
+  },
+  {
+    "created_at": "2025-01-09T22:00:12+00:00",
+    "temp": 24.9095117188,
+    "humidity": 30.3081501515,
+    "outside_temp": 3.7,
+    "outside_humidity": 99,
+    "winnd_speed": 15.1
+  },
+  {
+    "created_at": "2025-01-10T00:00:47+00:00",
+    "temp": 24.2499023438,
+    "humidity": 30.3789328732,
+    "outside_temp": 3.8,
+    "outside_humidity": 98,
+    "winnd_speed": 18.7
+  },
+  {
+    "created_at": "2025-01-10T01:00:04+00:00",
+    "temp": 23.7623242188,
+    "humidity": 30.8643964813,
+    "outside_temp": 4,
+    "outside_humidity": 99,
+    "winnd_speed": 20.9
+  },
+  {
+    "created_at": "2025-01-10T02:00:30+00:00",
+    "temp": 23.2332617188,
+    "humidity": 31.3621062745,
+    "outside_temp": 4.3,
+    "outside_humidity": 100,
+    "winnd_speed": 17.6
+  },
+  {
+    "created_at": "2025-01-10T03:00:48+00:00",
+    "temp": 21.91359375,
+    "humidity": 30.6848218447,
+    "outside_temp": 2.7,
+    "outside_humidity": 94,
+    "winnd_speed": 32.4
+  },
+  {
+    "created_at": "2025-01-10T04:00:05+00:00",
+    "temp": 20.96828125,
+    "humidity": 30.5151954495,
+    "outside_temp": 0.6,
+    "outside_humidity": 95,
+    "winnd_speed": 32.8
+  },
+  {
+    "created_at": "2025-01-10T05:00:23+00:00",
+    "temp": 20.295546875,
+    "humidity": 30.8107574759,
+    "outside_temp": 0.2,
+    "outside_humidity": 96,
+    "winnd_speed": 31
+  },
+  {
+    "created_at": "2025-01-10T06:00:41+00:00",
+    "temp": 19.9065820313,
+    "humidity": 30.9551393577,
+    "outside_temp": 0.2,
+    "outside_humidity": 95,
+    "winnd_speed": 31.7
+  },
+  {
+    "created_at": "2025-01-10T07:00:59+00:00",
+    "temp": 19.2338671875,
+    "humidity": 32.440472367,
+    "outside_temp": 0.2,
+    "outside_humidity": 94,
+    "winnd_speed": 31.7
+  },
+  {
+    "created_at": "2025-01-10T08:00:16+00:00",
+    "temp": 19.1802929688,
+    "humidity": 36.1108627212,
+    "outside_temp": 0.1,
+    "outside_humidity": 95,
+    "winnd_speed": 33.1
+  },
+  {
+    "created_at": "2025-01-10T09:00:33+00:00",
+    "temp": 18.759453125,
+    "humidity": 35.1576098964,
+    "outside_temp": 0.2,
+    "outside_humidity": 95,
+    "winnd_speed": 32
+  },
+  {
+    "created_at": "2025-01-10T10:00:51+00:00",
+    "temp": 20.13671875,
+    "humidity": 32.9685601882,
+    "outside_temp": 0.3,
+    "outside_humidity": 96,
+    "winnd_speed": 29.5
+  },
+  {
+    "created_at": "2025-01-10T11:00:08+00:00",
+    "temp": 21.7669140625,
+    "humidity": 31.7059724833,
+    "outside_temp": 0.6,
+    "outside_humidity": 94,
+    "winnd_speed": 30.6
+  },
+  {
+    "created_at": "2025-01-10T12:00:25+00:00",
+    "temp": 22.2236328125,
+    "humidity": 32.4001472777,
+    "outside_temp": 0.9,
+    "outside_humidity": 93,
+    "winnd_speed": 25.6
+  },
+  {
+    "created_at": "2025-01-10T13:00:05+00:00",
+    "temp": 22.5144921875,
+    "humidity": 32.3443369301,
+    "outside_temp": 0.8,
+    "outside_humidity": 90,
+    "winnd_speed": 27.7
+  },
+  {
+    "created_at": "2025-01-10T14:00:23+00:00",
+    "temp": 23.6166601563,
+    "humidity": 30.6491972576,
+    "outside_temp": 0.6,
+    "outside_humidity": 91,
+    "winnd_speed": 28.4
+  },
+  {
+    "created_at": "2025-01-10T15:00:40+00:00",
+    "temp": 24.1609375,
+    "humidity": 29.4176219261,
+    "outside_temp": 0.2,
+    "outside_humidity": 90,
+    "winnd_speed": 22.7
+  },
+  {
+    "created_at": "2025-01-10T16:00:57+00:00",
+    "temp": 23.4729882813,
+    "humidity": 30.3040677957,
+    "outside_temp": 0,
+    "outside_humidity": 94,
+    "winnd_speed": 25.9
+  },
+  {
+    "created_at": "2025-01-10T17:00:15+00:00",
+    "temp": 22.8305859375,
+    "humidity": 30.9926663198,
+    "outside_temp": -0.1,
+    "outside_humidity": 94,
+    "winnd_speed": 25.2
+  },
+  {
+    "created_at": "2025-01-10T18:00:32+00:00",
+    "temp": 23.3839453125,
+    "humidity": 29.5727685965,
+    "outside_temp": -0.4,
+    "outside_humidity": 95,
+    "winnd_speed": 25.9
+  },
+  {
+    "created_at": "2025-01-10T19:00:49+00:00",
+    "temp": 24.9469140625,
+    "humidity": 27.5744683007,
+    "outside_temp": -0.8,
+    "outside_humidity": 94,
+    "winnd_speed": 29.2
+  },
+  {
+    "created_at": "2025-01-10T20:00:07+00:00",
+    "temp": 24.7668554688,
+    "humidity": 28.5903243963,
+    "outside_temp": -0.8,
+    "outside_humidity": 94,
+    "winnd_speed": 31.3
+  },
+  {
+    "created_at": "2025-01-10T21:00:24+00:00",
+    "temp": 23.6424414063,
+    "humidity": 28.4830059844,
+    "outside_temp": -1.1,
+    "outside_humidity": 94,
+    "winnd_speed": 28.4
+  },
+  {
+    "created_at": "2025-01-10T22:00:41+00:00",
+    "temp": 22.7294726563,
+    "humidity": 27.2318662409,
+    "outside_temp": -1.4,
+    "outside_humidity": 94,
+    "winnd_speed": 26.6
+  },
+  {
+    "created_at": "2025-01-11T00:00:17+00:00",
+    "temp": 21.0466601563,
+    "humidity": 28.7615701782,
+    "outside_temp": -1.2,
+    "outside_humidity": 91,
+    "winnd_speed": 31
+  },
+  {
+    "created_at": "2025-01-11T01:00:35+00:00",
+    "temp": 20.2904882813,
+    "humidity": 29.7474870421,
+    "outside_temp": -1.1,
+    "outside_humidity": 92,
+    "winnd_speed": 31.7
+  },
+  {
+    "created_at": "2025-01-11T02:00:52+00:00",
+    "temp": 19.6683789063,
+    "humidity": 30.1879556163,
+    "outside_temp": -1.1,
+    "outside_humidity": 91,
+    "winnd_speed": 31.7
+  },
+  {
+    "created_at": "2025-01-11T03:00:12+00:00",
+    "temp": 19.06140625,
+    "humidity": 30.6460015358,
+    "outside_temp": -1,
+    "outside_humidity": 91,
+    "winnd_speed": 31.3
+  },
+  {
+    "created_at": "2025-01-11T04:00:29+00:00",
+    "temp": 18.529296875,
+    "humidity": 30.245269814,
+    "outside_temp": -1,
+    "outside_humidity": 92,
+    "winnd_speed": 30.2
+  },
+  {
+    "created_at": "2025-01-11T05:00:47+00:00",
+    "temp": 17.975,
+    "humidity": 30.6217319485,
+    "outside_temp": -1,
+    "outside_humidity": 93,
+    "winnd_speed": 31
+  },
+  {
+    "created_at": "2025-01-11T06:00:06+00:00",
+    "temp": 17.4525195313,
+    "humidity": 32.1164191414,
+    "outside_temp": -1,
+    "outside_humidity": 92,
+    "winnd_speed": 31.7
+  },
+  {
+    "created_at": "2025-01-11T07:00:23+00:00",
+    "temp": 17.9319726563,
+    "humidity": 31.6222983206,
+    "outside_temp": -1,
+    "outside_humidity": 92,
+    "winnd_speed": 31.7
+  },
+  {
+    "created_at": "2025-01-11T08:00:40+00:00",
+    "temp": 19.2859765625,
+    "humidity": 30.7327486577,
+    "outside_temp": -1,
+    "outside_humidity": 90,
+    "winnd_speed": 32
+  },
+  {
+    "created_at": "2025-01-11T09:00:58+00:00",
+    "temp": 20.3901171875,
+    "humidity": 30.5487671882,
+    "outside_temp": -0.9,
+    "outside_humidity": 91,
+    "winnd_speed": 30.2
+  },
+  {
+    "created_at": "2025-01-11T10:00:15+00:00",
+    "temp": 20.4234765625,
+    "humidity": 29.6166096007,
+    "outside_temp": -0.7,
+    "outside_humidity": 91,
+    "winnd_speed": 31.3
+  },
+  {
+    "created_at": "2025-01-11T11:00:32+00:00",
+    "temp": 19.890390625,
+    "humidity": 29.8874798219,
+    "outside_temp": -0.9,
+    "outside_humidity": 91,
+    "winnd_speed": 33.8
+  },
+  {
+    "created_at": "2025-01-11T12:00:50+00:00",
+    "temp": 20.1595117188,
+    "humidity": 30.3106052587,
+    "outside_temp": -0.9,
+    "outside_humidity": 91,
+    "winnd_speed": 35.3
+  },
+  {
+    "created_at": "2025-01-11T13:00:07+00:00",
+    "temp": 22.002109375,
+    "humidity": 29.1410652394,
+    "outside_temp": -0.9,
+    "outside_humidity": 93,
+    "winnd_speed": 34.2
+  },
+  {
+    "created_at": "2025-01-11T14:00:25+00:00",
+    "temp": 23.0253710938,
+    "humidity": 28.9181084679,
+    "outside_temp": -0.8,
+    "outside_humidity": 93,
+    "winnd_speed": 31.7
+  },
+  {
+    "created_at": "2025-01-11T15:00:42+00:00",
+    "temp": 22.5311914063,
+    "humidity": 31.065330871,
+    "outside_temp": -0.8,
+    "outside_humidity": 95,
+    "winnd_speed": 28.1
+  },
+  {
+    "created_at": "2025-01-11T16:01:00+00:00",
+    "temp": 22.90140625,
+    "humidity": 31.0104029383,
+    "outside_temp": -0.9,
+    "outside_humidity": 95,
+    "winnd_speed": 25.2
+  },
+  {
+    "created_at": "2025-01-11T17:00:17+00:00",
+    "temp": 22.002109375,
+    "humidity": 33.3347915161,
+    "outside_temp": -0.6,
+    "outside_humidity": 97,
+    "winnd_speed": 18
+  },
+  {
+    "created_at": "2025-01-11T18:00:35+00:00",
+    "temp": 23.4623632813,
+    "humidity": 29.9668471023,
+    "outside_temp": 0.1,
+    "outside_humidity": 98,
+    "winnd_speed": 13.7
+  },
+  {
+    "created_at": "2025-01-11T19:00:53+00:00",
+    "temp": 24.7440820313,
+    "humidity": 29.1911245591,
+    "outside_temp": 0.2,
+    "outside_humidity": 94,
+    "winnd_speed": 25.6
+  },
+  {
+    "created_at": "2025-01-11T20:00:10+00:00",
+    "temp": 24.3080859375,
+    "humidity": 29.1594756494,
+    "outside_temp": -0.4,
+    "outside_humidity": 92,
+    "winnd_speed": 29.2
+  },
+  {
+    "created_at": "2025-01-11T21:00:28+00:00",
+    "temp": 23.4684179688,
+    "humidity": 29.6355883647,
+    "outside_temp": -0.6,
+    "outside_humidity": 91,
+    "winnd_speed": 27.7
+  },
+  {
+    "created_at": "2025-01-11T22:00:46+00:00",
+    "temp": 22.622734375,
+    "humidity": 30.1785238047,
+    "outside_temp": -0.6,
+    "outside_humidity": 91,
+    "winnd_speed": 23.8
+  },
+  {
+    "created_at": "2025-01-12T00:00:21+00:00",
+    "temp": 21.2226757813,
+    "humidity": 30.3216906162,
+    "outside_temp": -2.1,
+    "outside_humidity": 91,
+    "winnd_speed": 13
+  },
+  {
+    "created_at": "2025-01-12T01:00:39+00:00",
+    "temp": 20.5226367188,
+    "humidity": 30.6549898883,
+    "outside_temp": -2,
+    "outside_humidity": 92,
+    "winnd_speed": 10.8
+  },
+  {
+    "created_at": "2025-01-12T02:00:58+00:00",
+    "temp": 19.93640625,
+    "humidity": 31.2596985128,
+    "outside_temp": -1.8,
+    "outside_humidity": 95,
+    "winnd_speed": 9.7
+  },
+  {
+    "created_at": "2025-01-12T03:00:15+00:00",
+    "temp": 19.406328125,
+    "humidity": 33.8607170354,
+    "outside_temp": -1.4,
+    "outside_humidity": 97,
+    "winnd_speed": 10.8
+  },
+  {
+    "created_at": "2025-01-12T04:00:33+00:00",
+    "temp": 18.91421875,
+    "humidity": 33.7504360857,
+    "outside_temp": -0.8,
+    "outside_humidity": 98,
+    "winnd_speed": 12.2
+  },
+  {
+    "created_at": "2025-01-12T05:00:51+00:00",
+    "temp": 18.5541210938,
+    "humidity": 32.84847568,
+    "outside_temp": -0.1,
+    "outside_humidity": 97,
+    "winnd_speed": 15.8
+  },
+  {
+    "created_at": "2025-01-12T06:00:09+00:00",
+    "temp": 18.2198046875,
+    "humidity": 32.9163668281,
+    "outside_temp": 0.1,
+    "outside_humidity": 97,
+    "winnd_speed": 14
+  },
+  {
+    "created_at": "2025-01-12T07:00:27+00:00",
+    "temp": 17.9679101563,
+    "humidity": 34.8321928102,
+    "outside_temp": 0.4,
+    "outside_humidity": 95,
+    "winnd_speed": 19.8
+  },
+  {
+    "created_at": "2025-01-12T08:00:45+00:00",
+    "temp": 18.8176171875,
+    "humidity": 33.9727712944,
+    "outside_temp": 0.6,
+    "outside_humidity": 93,
+    "winnd_speed": 20.9
+  },
+  {
+    "created_at": "2025-01-12T09:00:02+00:00",
+    "temp": 19.908125,
+    "humidity": 31.9954164565,
+    "outside_temp": 0.5,
+    "outside_humidity": 95,
+    "winnd_speed": 19.4
+  },
+  {
+    "created_at": "2025-01-12T10:00:22+00:00",
+    "temp": 21.2656640625,
+    "humidity": 30.5867985664,
+    "outside_temp": 0.6,
+    "outside_humidity": 94,
+    "winnd_speed": 22.3
+  },
+  {
+    "created_at": "2025-01-12T11:00:40+00:00",
+    "temp": 21.2302539063,
+    "humidity": 32.2294246695,
+    "outside_temp": 0.8,
+    "outside_humidity": 95,
+    "winnd_speed": 23.4
+  },
+  {
+    "created_at": "2025-01-12T12:00:58+00:00",
+    "temp": 20.9130859375,
+    "humidity": 33.1994562798,
+    "outside_temp": 1,
+    "outside_humidity": 89,
+    "winnd_speed": 30.6
+  },
+  {
+    "created_at": "2025-01-12T13:00:15+00:00",
+    "temp": 20.3248828125,
+    "humidity": 34.4477448716,
+    "outside_temp": 0.9,
+    "outside_humidity": 89,
+    "winnd_speed": 29.2
   }
 ]
