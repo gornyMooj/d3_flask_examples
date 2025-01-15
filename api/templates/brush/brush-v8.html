@@ -41,9 +41,16 @@
         }
 
         .gHelpLines line {
-            stroke: lightgray;
+            stroke: lightgrey;
             stroke-opacity: 0.7;
             shape-rendering: crispEdges;
+        }
+
+        .rect-box {
+            z-index: 998;
+        }
+        .text-line {
+            z-index: 999;
         }
 
 
@@ -60,6 +67,7 @@
 <li>sensor readings are collected every hour</li>
 <li>only points in the current extent are displayed</li>
 <li>with toolpit</li>
+<li>with lines displayed at the level of selected points and labels displayed at the top of the axes</li>
 
 
 
@@ -143,16 +151,23 @@
         .attr("width", width)
         .attr("height", height);
 
+
+    // grouping of elements, which determines the order of display
+    const helpLines = svg.append('g')
+        .attr("class", "gHelpLines")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    
+    const helpLinesLabel = svg.append('g')
+        .attr("class", "gHelpLinesLabel")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
     const focus = svg.append("g") // the panel on the top
         .attr("class", "focus")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    const helpLines = focus.append('g')
-        .attr("class", "gHelpLines");
-
     const axes = svg.append("g")
+        .attr("class", "axes")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-
 
     var context = svg.append("g") // the lower panel 
         .attr("class", "context")
@@ -161,6 +176,9 @@
     const div = d3.select("body").append("div")	
         .attr("class", "tooltip")				
         .style("opacity", 0);
+
+
+
 
     // scale domains
     let tempInside = d3.extent(data, function(d) { return d.temp; });
@@ -274,9 +292,9 @@
     focus.call(zoom);
 
     function displayLines(data) {
-        console.log(data)
+        // the code below can be shorten but this is not needed at the moment
 
-        // x line
+        // x line internal temp
         helpLines.append("line")
             .attr("class", "help-line")
             .attr("y1", y(data.temp) )
@@ -284,12 +302,47 @@
             .attr("x1", 0)
             .attr("x2", width);
 
+        helpLinesLabel.append("rect")
+            .attr("class", "rect-box")
+            .attr('x', -30)
+            .attr('y', y(data.temp) - 4 )
+            .attr("width", 26)
+            .attr("height", 12)
+            .style("fill", "white");
+
+        helpLinesLabel.append('text')
+            .attr("class","text-line")
+            .attr("fill","black")
+            .style("font-size", "10px")
+            .attr('x', -30)
+            .attr('y', y(data.temp) + 5 )
+            .text(data.temp.toFixed(2))
+
+
+        // x line internal temp
         helpLines.append("line")
             .attr("class", "help-line")
             .attr("y1", y(data.outside_temp) )
             .attr("y2", y(data.outside_temp))   
             .attr("x1", 0)
             .attr("x2", width);
+
+        helpLinesLabel.append("rect")
+            .attr("class", "rect-box")
+            .attr('x', -30)
+            .attr('y', y(data.outside_temp) - 4 )
+            .attr("width", 26)
+            .attr("height", 12)
+            .style("fill", "white");
+
+        helpLinesLabel.append('text')
+            .attr("class","text-line")
+            .attr("fill","black")
+            .style("font-size", "10px")
+            .attr('x', -30)
+            .attr('y', y(data.outside_temp) + 5 )
+            .text(data.outside_temp.toFixed(2))
+
 
         // y lines
         helpLines.append("line")
@@ -298,6 +351,27 @@
             .attr("y2", height)   
             .attr("x1", x(data.date))
             .attr("x2", x(data.date));
+
+        helpLinesLabel.append("rect")
+            .attr("class", "rect-box")
+            .attr('x', x(data.date) - 78/2 )
+            .attr('y', height + 5 )
+            .attr("width", 79)
+            .attr("height", 14)
+            .style("fill", "white");
+
+        const formatDate = d3.utcFormat("%d-%m-%Y %H:%M");
+        helpLinesLabel.append('text')
+            .attr("class","text-line")
+            .attr("fill","black")
+            .style("font-size", "10px")
+            .attr('x', x(data.date) - 78/2 )
+            .attr('y', height + 5 + 10 )
+            .text(formatDate(data.date));
+
+        
+
+
     }
 
 
@@ -365,6 +439,8 @@
                 .on("mouseout", function(event, d) {
                     toolPit.style("display", "none") 
                     helpLines.selectAll("line").remove(); // remove help line
+                    helpLinesLabel.selectAll("text").remove(); // remove help line
+                    helpLinesLabel.selectAll("rect").remove(); // remove help line
                 } )
 
         } else {
@@ -408,6 +484,8 @@
         // show/hide point data
         toolPit.style("display", "none")
         helpLines.selectAll("line").remove();
+        helpLinesLabel.selectAll("text").remove();
+        helpLinesLabel.selectAll("rect").remove();
         display_points();
 
         brushing = false; // Reset the flag
@@ -442,6 +520,8 @@
 
         // show/hide point data
         helpLines.selectAll("line").remove();
+        helpLinesLabel.selectAll("text").remove();
+        helpLinesLabel.selectAll("rect").remove();
         toolPit.style("display", "none")
         display_points();
 
@@ -452,6 +532,8 @@
     }
 
 
+    // displays labels on the top of axis - the only soultion that we have found so far
+    helpLinesLabel.raise()
 </script>
 
 {% endblock content %}
